@@ -1,33 +1,13 @@
-# Local configuration and secrets
-.env
-.env.*
-!.env.example
-.databrickscfg
-
-# Databricks local state
-.bundle/
-.databricks/
-
-# Python
-.coverage
-.mypy_cache/
-.pytest_cache/
-.ruff_cache/
-.venv/
-__pycache__/
-*.py[cod]
-htmlcov/
-
-# Node.js
-.npm/
-coverage/
-dist/
-node_modules/
-playwright-report/
-test-results/
-
-# IDE and operating system
-.idea/
 .DS_Store
-Thumbs.db
-*.swp
+node_modules/
+client/dist/
+dist/
+build/
+.env
+.databricks/
+.smoke-test/
+test-results/
+playwright-report/
+
+# Auto-generated types that depend on the selected serving endpoint.
+shared/appkit-types/serving.d.ts

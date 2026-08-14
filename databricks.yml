@@ -1,0 +1,87 @@
+bundle:
+  name: tutorial-customer-app
+
+variables:
+  agents_serving_endpoint_name:
+    description: Default LLM serving endpoint name
+  sql_warehouse_id:
+    description: SQL Warehouse ID
+  vector_search_index_name:
+    description: Three-level Unity Catalog name of the AI Search index
+  customer_table_name:
+    description: Three-level Unity Catalog name of the customer table
+  orders_table_name:
+    description: Three-level Unity Catalog name of the orders table
+  interactions_table_name:
+    description: Three-level Unity Catalog name of the customer interactions table
+  product_docs_table_name:
+    description: Three-level Unity Catalog name of the product documentation table
+  policies_table_name:
+    description: Three-level Unity Catalog name of the policies table
+
+resources:
+  apps:
+    app:
+      name: 'tutorial-customer-app'
+      description: 'Internal customer support RAG assistant'
+      source_code_path: ./
+      # Uncomment to enable on behalf of user API scopes. Available scopes: sql, dashboards.genie, files.files, serving.serving-endpoints
+      # user_api_scopes:
+      #   - sql
+
+      # The resources which this app has access to.
+      resources:
+        - name: agents-serving-endpoint
+          serving_endpoint:
+            name: ${var.agents_serving_endpoint_name}
+            permission: CAN_QUERY
+        - name: sql-warehouse
+          sql_warehouse:
+            id: ${var.sql_warehouse_id}
+            permission: CAN_USE
+        - name: support-docs-index
+          uc_securable:
+            securable_full_name: ${var.vector_search_index_name}
+            securable_type: TABLE
+            permission: SELECT
+        - name: customer-table
+          uc_securable:
+            securable_full_name: ${var.customer_table_name}
+            securable_type: TABLE
+            permission: SELECT
+        - name: orders-table
+          uc_securable:
+            securable_full_name: ${var.orders_table_name}
+            securable_type: TABLE
+            permission: SELECT
+        - name: interactions-table
+          uc_securable:
+            securable_full_name: ${var.interactions_table_name}
+            securable_type: TABLE
+            permission: SELECT
+        - name: product-docs-table
+          uc_securable:
+            securable_full_name: ${var.product_docs_table_name}
+            securable_type: TABLE
+            permission: SELECT
+        - name: policies-table
+          uc_securable:
+            securable_full_name: ${var.policies_table_name}
+            securable_type: TABLE
+            permission: SELECT
+
+targets:
+  default:
+    default: true
+    workspace:
+      host: https://dbc-0c251dd1-c7c4.cloud.databricks.com
+
+    variables:
+      agents_serving_endpoint_name: databricks-qwen3-next-80b-a3b-instruct
+      sql_warehouse_id: 701725258168e981
+      vector_search_index_name: customer_support_rag.support.support_docs_index
+      customer_table_name: customer_support_rag.support.customer
+      orders_table_name: customer_support_rag.support.orders
+      interactions_table_name: customer_support_rag.support.cust_service
+      product_docs_table_name: customer_support_rag.support.product_docs
+      policies_table_name: customer_support_rag.support.policies
