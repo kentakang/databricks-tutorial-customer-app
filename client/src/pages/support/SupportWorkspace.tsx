@@ -32,6 +32,8 @@ import {
   useAnalyticsQuery,
 } from '@databricks/appkit-ui/react';
 import { sql } from '@databricks/appkit-ui/js';
+import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 import {
   BookOpen,
   Calendar,
@@ -70,6 +72,15 @@ interface SourceItem {
 
 const queueSkeletonKeys = ['queue-1', 'queue-2', 'queue-3', 'queue-4', 'queue-5', 'queue-6'];
 const sourceSkeletonKeys = ['source-1', 'source-2', 'source-3'];
+
+function renderMarkdownHtml(markdownText: string): string {
+  try {
+    const raw = marked.parse(markdownText, { async: false, breaks: true, gfm: true });
+    return DOMPurify.sanitize(raw);
+  } catch {
+    return markdownText;
+  }
+}
 
 function formatTimestamp(value: string | null | undefined) {
   if (!value) return '—';
@@ -144,26 +155,26 @@ function AddressDetailDialog({ address, customerName }: { address: string; custo
           <span>전문 보기</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-md p-0 gap-0 overflow-hidden">
-        <DialogHeader className="border-b bg-muted/20 p-4 sm:p-5">
+      <DialogContent className="max-w-md flex flex-col p-0 gap-0 overflow-hidden">
+        <DialogHeader className="shrink-0 border-b bg-muted/20 px-5 py-4">
           <DialogTitle className="flex items-center gap-2 text-base font-semibold">
             <MapPin className="h-4 w-4 text-primary" />
             <span>배송지 주소 전문</span>
           </DialogTitle>
-          <DialogDescription className="text-xs text-muted-foreground">
+          <DialogDescription className="text-xs text-muted-foreground mt-0.5">
             {customerName} 고객의 전체 배송지 주소입니다.
           </DialogDescription>
         </DialogHeader>
         <div className="p-5">
-          <div className="rounded-xl border bg-muted/30 p-4 text-sm font-medium leading-relaxed text-foreground select-all">
+          <div className="rounded-xl border bg-muted/30 p-4 text-xs sm:text-sm font-medium leading-relaxed text-foreground select-all">
             {address}
           </div>
         </div>
-        <DialogFooter className="flex items-center justify-between border-t bg-muted/10 p-3 sm:px-5">
+        <DialogFooter className="shrink-0 relative z-10 flex flex-row items-center justify-between border-t bg-background px-5 py-3.5 sm:justify-between">
           <Button variant="outline" size="sm" onClick={() => setOpen(false)}>
             닫기
           </Button>
-          <Button size="sm" onClick={() => void handleCopy()} className="gap-1.5">
+          <Button size="sm" onClick={() => void handleCopy()} className="gap-1.5 shadow-xs">
             {copied ? <Check className="h-3.5 w-3.5 text-success" /> : <Copy className="h-3.5 w-3.5" />}
             <span>{copied ? '복사됨!' : '주소 복사'}</span>
           </Button>
@@ -178,6 +189,8 @@ function DocumentDetailDialog({ source }: { source: SourceItem }) {
   const [copied, setCopied] = useState(false);
   const cleanBody = toCleanFullDocumentText(source.content);
   const isPolicy = source.source_type === 'policy';
+
+  const htmlContent = useMemo(() => renderMarkdownHtml(cleanBody), [cleanBody]);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(cleanBody);
@@ -197,14 +210,14 @@ function DocumentDetailDialog({ source }: { source: SourceItem }) {
           <span>전문 보기</span>
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col p-0 gap-0 overflow-hidden">
-        <DialogHeader className="shrink-0 border-b bg-muted/20 p-4 sm:p-5">
+      <DialogContent className="max-w-2xl sm:max-w-3xl h-[82vh] max-h-[82vh] flex flex-col p-0 gap-0 overflow-hidden">
+        <DialogHeader className="shrink-0 border-b bg-muted/20 px-5 py-4">
           <div className="flex items-center justify-between gap-3 pr-6">
             <DialogTitle className="flex items-center gap-2 text-base font-bold tracking-tight">
               <FileText className="h-4 w-4 text-primary" />
               <span>{source.title}</span>
             </DialogTitle>
-            <Badge variant={isPolicy ? 'default' : 'outline'} className="text-[10px]">
+            <Badge variant={isPolicy ? 'default' : 'outline'} className="text-[10px] shrink-0">
               {isPolicy ? '정책' : '상품 문서'}
             </Badge>
           </div>
@@ -212,16 +225,27 @@ function DocumentDetailDialog({ source }: { source: SourceItem }) {
             문서 ID: {source.source_id}
           </DialogDescription>
         </DialogHeader>
-        <ScrollArea className="flex-1 max-h-[60vh] p-5">
-          <div className="whitespace-pre-wrap text-xs sm:text-sm leading-relaxed text-foreground font-normal">
-            {cleanBody || '문서 내용이 비어 있습니다.'}
-          </div>
-        </ScrollArea>
-        <DialogFooter className="shrink-0 flex items-center justify-between border-t bg-muted/10 p-3 sm:px-5">
+
+        <div className="flex-1 min-h-0 overflow-hidden relative">
+          <ScrollArea className="h-full">
+            <div className="p-5 sm:p-6 pb-8">
+              {cleanBody ? (
+                <div
+                  className="prose prose-sm dark:prose-invert max-w-none text-xs sm:text-sm leading-relaxed text-foreground [&_h1]:text-base [&_h1]:font-bold [&_h1]:mt-4 [&_h1]:mb-2 [&_h1]:text-foreground [&_h2]:text-sm [&_h2]:font-bold [&_h2]:mt-3 [&_h2]:mb-1.5 [&_h2]:text-foreground [&_h3]:text-xs [&_h3]:font-bold [&_h3]:mt-2.5 [&_h3]:mb-1 [&_h3]:text-foreground [&_p]:my-2 [&_p]:leading-relaxed [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-2 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:my-2 [&_li]:my-0.5 [&_table]:w-full [&_table]:border-collapse [&_table]:my-3 [&_table]:text-xs [&_th]:border [&_th]:p-2 [&_th]:bg-muted/40 [&_th]:font-semibold [&_th]:text-left [&_td]:border [&_td]:p-2 [&_code]:rounded [&_code]:bg-muted [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[11px] [&_code]:font-mono [&_pre]:rounded-lg [&_pre]:bg-muted/50 [&_pre]:p-3 [&_pre]:overflow-x-auto [&_blockquote]:border-l-2 [&_blockquote]:border-primary/50 [&_blockquote]:pl-3 [&_blockquote]:italic [&_blockquote]:text-muted-foreground [&_hr]:my-4 [&_hr]:border-border/60"
+                  dangerouslySetInnerHTML={{ __html: htmlContent }}
+                />
+              ) : (
+                <p className="text-xs text-muted-foreground">문서 내용이 비어 있습니다.</p>
+              )}
+            </div>
+          </ScrollArea>
+        </div>
+
+        <DialogFooter className="shrink-0 relative z-10 flex flex-row items-center justify-between border-t bg-background px-5 py-3.5 sm:justify-between">
           <Button variant="outline" size="sm" onClick={() => setOpen(false)}>
             닫기
           </Button>
-          <Button size="sm" onClick={() => void handleCopy()} className="gap-1.5">
+          <Button size="sm" onClick={() => void handleCopy()} className="gap-1.5 shadow-xs">
             {copied ? <Check className="h-3.5 w-3.5 text-success" /> : <Copy className="h-3.5 w-3.5" />}
             <span>{copied ? '복사됨!' : '본문 복사'}</span>
           </Button>
