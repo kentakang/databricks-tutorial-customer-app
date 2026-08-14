@@ -1,55 +1,65 @@
-# Databricks Tutorial Customer App
+# Databricks Customer Support Copilot
 
-Databricks App의 제품 아이디어 구체화와 구현을 Codex에서 이어가기 위한 저장소입니다.
+Databricks AppKit, Delta Lake, AI Search, Foundation Model API를 결합한 내부 상담원용 RAG 앱입니다. 상담 건을 선택하면 고객 마스터, 주문, 과거 상담을 한 화면에 보여 주고 상품 문서와 정책에 근거한 한국어 답변 초안을 스트리밍으로 제안합니다.
 
-현재는 개발 도구와 에이전트 작업 규약만 구성되어 있습니다. 앱 프레임워크와 데이터 연결은 제품 요구사항이 정해진 뒤 Databricks AppKit의 `databricks apps init`으로 생성합니다. 이렇게 하면 Analytics, Lakebase, Genie 등 필요한 기능과 리소스를 먼저 결정하고 불필요한 인프라를 만들지 않을 수 있습니다.
+전체 Workspace 준비 과정과 실행 순서는 [README.ipynb](README.ipynb)에 정리되어 있습니다.
 
-## 준비된 환경
+## 확정 리소스
 
-- Databricks CLI 0.294.0 이상과 OAuth 프로필
-- Node.js 22.16 이상(22.x)
-- `uv`와 Python 3.11
-- 저장소 범위의 공식 Databricks Codex 스킬 10개
-- Conventional Commits 검증 Git 훅
-- 아이디어와 아키텍처 결정 기록 템플릿
+- Databricks App: `tutorial-customer-app` (`1ea7e2d7-f158-4a9a-bb31-6532b34ed67b`)
+- Catalog / Schema: `customer_support_rag.support`
+- Managed volume: `customer_support_rag.support.raw_data`
+- AI Search endpoint: `customer-support-search`
+- AI Search index: `customer_support_rag.support.support_docs_index`
+- SQL warehouse: `701725258168e981`
+- Answer model: `databricks-qwen3-next-80b-a3b-instruct`
+- Embedding model: `databricks-qwen3-embedding-0-6b`
 
-인증 토큰과 `.databrickscfg`는 저장소에 커밋하지 않습니다.
+기존 `tutorial` 카탈로그의 테이블은 앱에서 사용하지 않습니다. 이전 `tutorial-search` 인덱스와 엔드포인트는 새 구성을 만들기 전에 삭제했습니다.
 
-## 최초 설정
+## 데이터 준비
 
-Windows PowerShell에서 다음 명령을 실행합니다.
+원본 CSV를 `/Volumes/customer_support_rag/support/raw_data/source/`에 업로드한 다음 [01_create_tables.sql](databricks/setup/01_create_tables.sql)을 SQL Warehouse에서 실행합니다. 스크립트는 다섯 원본 Delta 테이블과 Change Data Feed가 활성화된 `rag_documents`를 만듭니다.
 
-```powershell
-./scripts/setup.ps1
-./scripts/verify-tools.ps1
-```
+고객 속성은 `customer.customer_id`, 상품명은 `product_docs.product_id`를 기준으로 사용합니다. 원본 상담 전화번호와 주문 상품명에 일부 불일치가 있기 때문에 중복 필드보다 마스터 값을 우선합니다.
 
-터미널이 설치 직후의 PATH를 아직 인식하지 못하면 Codex 또는 터미널을 한 번 다시 시작합니다.
+## 로컬 개발
 
-현재 설치된 Databricks 프로필을 확인한 뒤, 실제 Workspace 명령을 실행할 때 항상 명시적으로 선택합니다.
-
-```powershell
-databricks auth profiles
-databricks apps list --profile <profile-name>
-```
-
-## 아이디어에서 앱 골격까지
-
-1. [아이디어 템플릿](docs/ideas/README.md)에 문제, 사용자, 성공 기준과 데이터 요구사항을 정리합니다.
-2. 단순 시각화면 관리형 AI/BI Dashboard와 Custom Databricks App을 비교합니다.
-3. 영속적인 쓰기 작업이 필요한지 확인하고, 읽기 데이터에는 Analytics와 Lakebase synced tables 중 적합한 방식을 선택합니다.
-4. `databricks apps manifest`로 현재 AppKit 기능과 필수 리소스를 확인합니다.
-5. 선택한 프로필과 리소스를 명시해 `databricks apps init`을 실행합니다.
-6. 앱 코드가 생성되면 해당 템플릿의 `validate`, `test`, `lint`, `typecheck` 명령을 품질 기준으로 사용합니다.
-
-프레임워크와 리소스가 확정된 결정은 [ADR 템플릿](docs/decisions/0000-template.md)으로 기록합니다.
-
-## 에이전트 스킬 갱신
-
-Databricks CLI가 배포하는 공식 스킬을 같은 선택 목록으로 갱신하려면 다음을 실행합니다.
+Node.js 22.16 이상(22.x), npm, Databricks CLI와 선택한 OAuth 프로필이 필요합니다. 로컬 리소스 값은 `.env.example`을 복사한 `.env`에 두며 `.env`와 인증 정보는 커밋하지 않습니다.
 
 ```powershell
-./scripts/update-databricks-skills.ps1
+npm ci
+npm run dev
 ```
 
-갱신 후에는 변경 내용을 검토하고 독립된 `chore(codex): ...` 커밋으로 기록합니다.
+AppKit 개발 서버는 기본적으로 `http://localhost:8000`에서 실행됩니다.
+
+## 검사
+
+```powershell
+npm run typegen
+npm run format
+npm run lint
+npm run lint:ast-grep
+npm run typecheck
+npm run test
+npm run build
+databricks bundle validate --profile codex-databricks
+databricks apps validate --profile codex-databricks
+```
+
+## 기존 App에 연결하고 배포
+
+배포 전에 Bundle의 `app` 리소스를 미리 만든 App ID에 한 번 연결합니다. 연결 후 이 App은 Bundle이 관리하므로 UI의 수동 변경이 다음 배포에서 덮어써질 수 있습니다.
+
+```powershell
+databricks bundle deployment bind app 1ea7e2d7-f158-4a9a-bb31-6532b34ed67b --auto-approve --profile codex-databricks
+databricks bundle deploy --profile codex-databricks
+```
+
+앱 리소스 선언은 서비스 주체에 SQL Warehouse `CAN_USE`, Qwen 모델 `CAN_QUERY`, 필요한 Delta 테이블과 AI Search 인덱스 `SELECT`만 부여합니다.
+
+## 설계 문서
+
+- [제품 아이디어](docs/ideas/customer-support-rag-app.md)
+- [아키텍처 결정](docs/decisions/0001-customer-support-rag-architecture.md)
