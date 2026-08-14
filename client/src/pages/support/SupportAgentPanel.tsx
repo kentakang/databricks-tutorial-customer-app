@@ -3,7 +3,6 @@ import {
   type AgentChatEvent,
   Alert,
   AlertDescription,
-  Badge,
   Button,
   Card,
   CardContent,
@@ -25,7 +24,6 @@ interface AgentMessage {
   id: string;
   role: 'user' | 'assistant' | 'tool';
   content: string;
-  toolName?: string;
 }
 
 interface SupportAgentPanelProps {
@@ -47,7 +45,6 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
         {
           id: `tool-${Date.now()}-${Math.random()}`,
           role: 'tool',
-          toolName: event.item?.name,
           content: '상품 문서와 정책 근거를 검색했습니다.',
         },
       ]);
@@ -111,16 +108,11 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
   return (
     <Card className="flex min-h-[34rem] flex-col overflow-hidden border-primary/20 shadow-sm">
       <CardHeader className="border-b bg-primary/[0.04] pb-4">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <Bot className="h-4 w-4 text-primary" />
-              AI 답변 제안
-            </CardTitle>
-            <p className="mt-1 text-xs text-muted-foreground">Qwen3 + AI Search · 상담원 검토 필요</p>
-          </div>
-          <Badge variant="outline">읽기 전용</Badge>
-        </div>
+        <CardTitle className="flex items-center gap-2 text-base">
+          <Bot className="h-4 w-4 text-primary" />
+          AI 답변 제안
+        </CardTitle>
+        <p className="mt-1 text-xs text-muted-foreground">AI가 만든 초안입니다. 보내기 전에 확인해 주세요.</p>
       </CardHeader>
 
       <CardContent className="flex min-h-0 flex-1 flex-col gap-3 p-0">
@@ -151,7 +143,7 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
                     key={message.id}
                     className="rounded-md border border-primary/20 bg-primary/[0.04] px-3 py-2 text-xs text-muted-foreground"
                   >
-                    <span className="font-medium text-foreground">{message.toolName}</span> · {message.content}
+                    {message.content}
                   </div>
                 ) : (
                   <div
@@ -185,7 +177,7 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
 
         {error ? (
           <Alert variant="destructive" className="mx-3 w-auto">
-            <AlertDescription>{error}</AlertDescription>
+            <AlertDescription>답변을 만들지 못했습니다. 잠시 후 다시 시도해 주세요.</AlertDescription>
           </Alert>
         ) : null}
 

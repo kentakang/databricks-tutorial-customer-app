@@ -24,11 +24,12 @@ import {
 } from '@databricks/appkit-ui/react';
 import { sql } from '@databricks/appkit-ui/js';
 import { BookOpen, Clock3, Mail, MapPin, Package, Phone, Search, ShieldCheck, UserRound } from 'lucide-react';
+import { formatCustomerLevel, toReadableSourcePreview } from '../../lib/display';
 import { SupportAgentPanel } from './SupportAgentPanel';
 
 interface Viewer {
-  displayName: string;
-  executionMode: string;
+  email: string | null;
+  user: string | null;
 }
 
 const queueSkeletonKeys = ['queue-1', 'queue-2', 'queue-3', 'queue-4', 'queue-5', 'queue-6'];
@@ -45,12 +46,16 @@ function formatTimestamp(value: string | null | undefined) {
       }).format(date);
 }
 
-function QueryError({ message }: { message: string }) {
+function QueryError() {
   return (
     <Alert variant="destructive">
-      <AlertDescription>{message}</AlertDescription>
+      <AlertDescription>정보를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</AlertDescription>
     </Alert>
   );
+}
+
+function viewerLabel(viewer: Viewer | null) {
+  return viewer?.email?.trim() || viewer?.user?.trim() || '';
 }
 
 export function SupportWorkspace() {
@@ -126,6 +131,7 @@ export function SupportWorkspace() {
   });
 
   const detail = details?.[0];
+  const signedInLabel = viewerLabel(viewer);
   const agentContext = useMemo(() => {
     if (!detail) return null;
     return {
@@ -149,24 +155,17 @@ export function SupportWorkspace() {
             <div className="flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-primary" />
               <h1 className="font-semibold tracking-tight">Support Copilot</h1>
-              <Badge variant="secondary">Internal</Badge>
             </div>
             <p className="mt-0.5 text-xs text-muted-foreground">고객 문맥과 승인된 문서에 근거한 상담 답변 제안</p>
           </div>
-          <div className="text-right">
-            <p className="text-sm font-medium">{viewer?.displayName ?? 'Workspace user'}</p>
-            <p className="text-xs text-muted-foreground">데이터 조회: 앱 서비스 주체</p>
-          </div>
+          {signedInLabel ? <p className="text-sm font-medium">{signedInLabel}</p> : null}
         </div>
       </header>
 
       <main className="mx-auto grid max-w-[1800px] gap-4 p-4 lg:grid-cols-[310px_minmax(0,1fr)_430px] lg:p-6">
         <Card className="h-[calc(100vh-7.5rem)] overflow-hidden shadow-sm">
           <CardHeader className="border-b pb-4">
-            <div className="flex items-center justify-between">
-              <CardTitle className="text-base">최근 상담</CardTitle>
-              <Badge variant="outline">{queue?.length ?? 0}</Badge>
-            </div>
+            <CardTitle className="text-base">최근 상담</CardTitle>
             <div className="relative mt-2">
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
@@ -186,7 +185,7 @@ export function SupportWorkspace() {
               </div>
             ) : queueError ? (
               <div className="p-4">
-                <QueryError message={queueError} />
+                <QueryError />
               </div>
             ) : filteredQueue.length === 0 ? (
               <Empty className="py-16">
@@ -213,7 +212,7 @@ export function SupportWorkspace() {
                           <div className="flex items-center justify-between gap-2">
                             <span className="truncate text-sm font-medium">{item.customer_name}</span>
                             <Badge variant="outline" className="shrink-0 text-[10px]">
-                              {item.customer_level}
+                              {formatCustomerLevel(item.customer_level)}
                             </Badge>
                           </div>
                           <p className="mt-1 text-xs font-medium text-primary">{item.issue_category}</p>
@@ -241,7 +240,7 @@ export function SupportWorkspace() {
               <Skeleton className="h-80 w-full" />
             </div>
           ) : detailError ? (
-            <QueryError message={detailError} />
+            <QueryError />
           ) : !detail ? (
             <Card>
               <Empty className="py-24">
@@ -259,14 +258,11 @@ export function SupportWorkspace() {
                     <div>
                       <div className="mb-2 flex items-center gap-2">
                         <Badge>{detail.issue_category}</Badge>
-                        <span className="text-xs text-muted-foreground">{detail.interaction_id}</span>
                       </div>
                       <CardTitle className="text-lg">{detail.customer_name}</CardTitle>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {formatTimestamp(detail.interacted_at)} · 담당자 {detail.agent_id}
-                      </p>
+                      <p className="mt-1 text-xs text-muted-foreground">{formatTimestamp(detail.interacted_at)}</p>
                     </div>
-                    <Badge variant="secondary">{detail.customer_level} 고객</Badge>
+                    <Badge variant="secondary">{formatCustomerLevel(detail.customer_level)} 고객</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -294,17 +290,17 @@ export function SupportWorkspace() {
                   <Tabs defaultValue="orders">
                     <TabsList>
                       <TabsTrigger value="orders">
-                        <Package className="mr-2 h-4 w-4" /> 주문 {orders?.length ?? 0}
+                        <Package className="mr-2 h-4 w-4" /> 최근 주문
                       </TabsTrigger>
                       <TabsTrigger value="history">
-                        <UserRound className="mr-2 h-4 w-4" /> 상담 이력 {history?.length ?? 0}
+                        <UserRound className="mr-2 h-4 w-4" /> 상담 이력
                       </TabsTrigger>
                     </TabsList>
                     <TabsContent value="orders" className="mt-4">
                       {ordersLoading ? (
                         <Skeleton className="h-52 w-full" />
                       ) : ordersError ? (
-                        <QueryError message={ordersError} />
+                        <QueryError />
                       ) : !orders?.length ? (
                         <p className="py-12 text-center text-sm text-muted-foreground">주문 이력이 없습니다.</p>
                       ) : (
@@ -322,7 +318,6 @@ export function SupportWorkspace() {
                               </div>
                               <div className="text-right text-xs text-muted-foreground">
                                 <p>{formatTimestamp(order.ordered_at)}</p>
-                                <p className="mt-1">{order.transaction_id}</p>
                               </div>
                             </div>
                           ))}
@@ -333,7 +328,7 @@ export function SupportWorkspace() {
                       {historyLoading ? (
                         <Skeleton className="h-52 w-full" />
                       ) : historyError ? (
-                        <QueryError message={historyError} />
+                        <QueryError />
                       ) : !history?.length ? (
                         <p className="py-12 text-center text-sm text-muted-foreground">이전 상담 이력이 없습니다.</p>
                       ) : (
@@ -371,7 +366,7 @@ export function SupportWorkspace() {
                 <BookOpen className="h-4 w-4 text-primary" />
                 검색 근거
               </CardTitle>
-              <p className="text-xs text-muted-foreground">AI Search HYBRID 상위 5개 문서</p>
+              <p className="text-xs text-muted-foreground">선택한 문의와 관련된 정책·상품 문서</p>
             </CardHeader>
             <CardContent>
               {sourcesLoading ? (
@@ -381,24 +376,29 @@ export function SupportWorkspace() {
                   ))}
                 </div>
               ) : sourcesError ? (
-                <QueryError message={sourcesError} />
+                <QueryError />
               ) : !sources?.length ? (
                 <p className="py-8 text-center text-sm text-muted-foreground">
                   상담을 선택하면 관련 문서를 검색합니다.
                 </p>
               ) : (
                 <div className="space-y-2">
-                  {sources.map((source) => (
-                    <div key={source.document_id} className="rounded-lg border p-3">
-                      <div className="flex items-center justify-between gap-2">
-                        <p className="truncate text-sm font-medium">{source.title}</p>
-                        <Badge variant="outline" className="shrink-0 text-[10px]">
-                          {source.source_type === 'policy' ? '정책' : '상품 문서'}
-                        </Badge>
+                  {sources.map((source) => {
+                    const preview = toReadableSourcePreview(source.content, 160, source.title);
+                    return (
+                      <div key={source.document_id} className="rounded-lg border p-3">
+                        <div className="flex items-center justify-between gap-2">
+                          <p className="truncate text-sm font-medium">{source.title}</p>
+                          <Badge variant="outline" className="shrink-0 text-[10px]">
+                            {source.source_type === 'policy' ? '정책' : '상품 문서'}
+                          </Badge>
+                        </div>
+                        {preview ? (
+                          <p className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{preview}</p>
+                        ) : null}
                       </div>
-                      <p className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{source.content}</p>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </CardContent>

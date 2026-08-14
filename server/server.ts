@@ -22,10 +22,9 @@ await createApp({
   onPluginsReady(appkit) {
     appkit.server.extend((app) => {
       app.get('/api/whoami', (req, res) => {
-        const forwardedUser = req.header('x-forwarded-user');
         res.json({
-          displayName: forwardedUser || 'Local developer',
-          executionMode: 'service-principal',
+          email: req.header('x-forwarded-email') || null,
+          user: req.header('x-forwarded-user') || null,
         });
       });
     });

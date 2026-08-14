@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import type { ReactNode } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@databricks/appkit-ui/react';
+import { Button, Card, CardContent, CardHeader, CardTitle } from '@databricks/appkit-ui/react';
 
 interface Props {
   children: ReactNode;
@@ -8,8 +8,6 @@ interface Props {
 
 interface State {
   hasError: boolean;
-  error: Error | null;
-  errorInfo: React.ErrorInfo | null;
 }
 
 export class ErrorBoundary extends Component<Props, State> {
@@ -17,53 +15,31 @@ export class ErrorBoundary extends Component<Props, State> {
     super(props);
     this.state = {
       hasError: false,
-      error: null,
-      errorInfo: null,
     };
   }
 
-  static getDerivedStateFromError(error: Error): Partial<State> {
-    return { hasError: true, error };
+  static getDerivedStateFromError(): Partial<State> {
+    return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error('ErrorBoundary caught an error:', error);
     console.error('Error details:', errorInfo);
-    this.setState({
-      error,
-      errorInfo,
-    });
   }
 
   render() {
     if (this.state.hasError) {
       return (
         <div className="min-h-screen bg-background p-4">
-          <Card className="max-w-2xl mx-auto mt-8">
+          <Card className="mx-auto mt-8 max-w-lg">
             <CardHeader>
-              <CardTitle className="text-destructive">Application Error</CardTitle>
+              <CardTitle>화면을 표시하지 못했습니다</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold mb-2">Error Message:</h3>
-                  <pre className="bg-muted p-3 rounded text-sm overflow-auto">{this.state.error?.toString()}</pre>
-                </div>
-                {this.state.errorInfo && (
-                  <div>
-                    <h3 className="font-semibold mb-2">Component Stack:</h3>
-                    <pre className="bg-muted p-3 rounded text-sm overflow-auto">
-                      {this.state.errorInfo.componentStack}
-                    </pre>
-                  </div>
-                )}
-                {this.state.error?.stack && (
-                  <div>
-                    <h3 className="font-semibold mb-2">Stack Trace:</h3>
-                    <pre className="bg-muted p-3 rounded text-sm overflow-auto max-h-96">{this.state.error.stack}</pre>
-                  </div>
-                )}
-              </div>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                잠시 후 다시 시도해 주세요. 문제가 계속되면 관리자에게 문의해 주세요.
+              </p>
+              <Button onClick={() => window.location.reload()}>다시 시도</Button>
             </CardContent>
           </Card>
         </div>

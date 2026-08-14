@@ -13,12 +13,23 @@ let failedRequests: string[] = [];
 test('smoke test - support workspace loads its primary workflow', async ({ page }) => {
   await page.goto('/');
 
+  await expect(page).toHaveTitle('Support Copilot');
   await expect(page.getByRole('heading', { name: 'Support Copilot' })).toBeVisible();
   await expect(page.getByText('최근 상담', { exact: true })).toBeVisible();
   await expect(page.getByText('검색 근거', { exact: true })).toBeVisible();
   await expect(page.getByText('AI 답변 제안', { exact: true })).toBeVisible();
   await expect(page.getByPlaceholder('고객, 분류, 문의 검색')).toBeVisible();
   await expect(page.getByRole('button', { name: '답변 초안 생성' })).toBeEnabled({ timeout: 60_000 });
+
+  await expect(page.getByText('Internal', { exact: true })).toHaveCount(0);
+  await expect(page.getByText('Local developer')).toHaveCount(0);
+  await expect(page.getByText('앱 서비스 주체')).toHaveCount(0);
+  await expect(page.getByText(/Qwen3/)).toHaveCount(0);
+  await expect(page.getByText(/HYBRID/)).toHaveCount(0);
+  await expect(page.getByText('읽기 전용', { exact: true })).toHaveCount(0);
+  await expect(page.getByText('<product_category>')).toHaveCount(0);
+  await expect(page.getByText(/trans_\d+/)).toHaveCount(0);
+  await expect(page.getByText(/담당자\s+\d+/)).toHaveCount(0);
 });
 
 // ── Lifecycle hooks ─────────────────────────────────────────────────────────
