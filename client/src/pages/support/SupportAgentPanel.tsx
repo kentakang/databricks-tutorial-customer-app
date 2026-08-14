@@ -122,8 +122,8 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
   };
 
   return (
-    <Card className="flex min-h-[35rem] flex-col overflow-hidden border shadow-sm transition-all">
-      <CardHeader className="border-b bg-muted/20 px-4 py-3.5 sm:px-5">
+    <Card className="flex min-h-[35rem] flex-col overflow-hidden border shadow-sm p-0 gap-0">
+      <CardHeader className="shrink-0 border-b bg-muted/20 px-4 py-3.5 sm:px-5">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2.5">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -131,7 +131,7 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
             </div>
             <div>
               <CardTitle className="text-sm font-semibold tracking-tight sm:text-base">AI 답변 제안</CardTitle>
-              <p className="text-[11px] text-muted-foreground">AI가 만든 초안입니다. 보내기 전에 확인해 주세요.</p>
+              <p className="text-[11px] text-muted-foreground">고객에게 전송하기 전 답변 내용을 확인해 주세요.</p>
             </div>
           </div>
           {isStreaming ? (
@@ -157,9 +157,9 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
               <div className="mb-3.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 shadow-xs ring-1 ring-primary/20">
                 <Sparkles className="h-6 w-6 text-primary" />
               </div>
-              <h3 className="text-sm font-semibold text-foreground">근거 기반 초안을 준비합니다</h3>
+              <h3 className="text-sm font-semibold text-foreground">상담 답변 초안을 생성해 보세요</h3>
               <p className="mt-1.5 max-w-[260px] text-xs leading-relaxed text-muted-foreground">
-                고객·주문·상담 문맥을 전달하고 상품 문서와 정책을 검색합니다.
+                선택한 문의와 고객 정보를 바탕으로 AI가 최적의 답변을 작성합니다.
               </p>
               <Button
                 className="mt-5 shadow-xs transition-transform active:scale-[0.98]"

@@ -35,7 +35,6 @@ import {
   Package,
   Phone,
   Search,
-  ShieldCheck,
   Tag,
   User,
   UserRound,
@@ -197,20 +196,8 @@ export function SupportWorkspace() {
       {/* Top App Header */}
       <header className="sticky top-0 z-20 border-b bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1880px] items-center justify-between px-4 py-3 sm:px-6">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary shadow-xs ring-1 ring-primary/20">
-              <ShieldCheck className="h-5 w-5 text-primary-foreground" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-base font-bold tracking-tight sm:text-lg">Support Copilot</h1>
-                <span className="inline-flex items-center gap-1 rounded-full border bg-background px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                  <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
-                  Live
-                </span>
-              </div>
-              <p className="text-xs text-muted-foreground">고객 문맥과 승인된 문서에 근거한 상담 답변 제안</p>
-            </div>
+          <div>
+            <h1 className="text-base font-bold tracking-tight sm:text-lg">Support Copilot</h1>
           </div>
           {signedInLabel ? (
             <div className="flex items-center gap-2.5 rounded-full border bg-background/80 px-3 py-1.5 shadow-2xs">
@@ -226,8 +213,8 @@ export function SupportWorkspace() {
       {/* Main 3-Column Workspace */}
       <main className="mx-auto grid max-w-[1880px] gap-4 p-4 lg:grid-cols-[330px_minmax(0,1fr)_440px] lg:p-6">
         {/* Left Column: Recent Interactions List */}
-        <Card className="flex h-[calc(100vh-7.5rem)] flex-col overflow-hidden border shadow-sm">
-          <CardHeader className="border-b bg-card/60 pb-3">
+        <Card className="flex h-[calc(100vh-5.5rem)] flex-col overflow-hidden border shadow-sm p-0 gap-0">
+          <CardHeader className="shrink-0 border-b bg-card/60 px-4 py-3 sm:px-5">
             <div className="flex items-center justify-between">
               <CardTitle className="text-sm font-semibold tracking-tight sm:text-base">최근 상담</CardTitle>
               {filteredQueue.length > 0 && (
@@ -255,7 +242,7 @@ export function SupportWorkspace() {
               )}
             </div>
           </CardHeader>
-          <CardContent className="flex-1 p-0">
+          <CardContent className="flex-1 min-h-0 p-0 overflow-hidden">
             {queueLoading ? (
               <div className="space-y-3 p-4">
                 {queueSkeletonKeys.map((key) => (
@@ -274,8 +261,8 @@ export function SupportWorkspace() {
                 </EmptyHeader>
               </Empty>
             ) : (
-              <ScrollArea className="h-[calc(100vh-14.5rem)]">
-                <div className="divide-y divide-border/60">
+              <ScrollArea className="h-full">
+                <div className="divide-y divide-border/60 pb-8">
                   {filteredQueue.map((item) => {
                     const selected = item.interaction_id === effectiveInteractionId;
                     return (
@@ -341,7 +328,7 @@ export function SupportWorkspace() {
           ) : detailError ? (
             <QueryError />
           ) : !detail ? (
-            <Card className="border shadow-sm">
+            <Card className="border shadow-sm p-0 gap-0 overflow-hidden">
               <Empty className="py-28">
                 <EmptyHeader>
                   <EmptyTitle>상담 건을 선택하세요</EmptyTitle>
@@ -352,8 +339,8 @@ export function SupportWorkspace() {
           ) : (
             <>
               {/* Customer Detail Card */}
-              <Card className="border shadow-sm">
-                <CardHeader className="border-b bg-card/60 pb-3.5">
+              <Card className="border shadow-sm p-0 gap-0 overflow-hidden">
+                <CardHeader className="shrink-0 border-b bg-card/60 px-4 py-3.5 sm:px-5">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
                       <Avatar className="h-10 w-10 text-sm font-bold shadow-2xs ring-1 ring-border">
@@ -387,7 +374,7 @@ export function SupportWorkspace() {
                     </Badge>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4 pt-4">
+                <CardContent className="space-y-4 p-4 sm:p-5">
                   {/* Current Issue Callout Box */}
                   <div className="relative rounded-xl border border-primary/20 bg-primary/[0.03] p-4">
                     <div className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-primary">
@@ -439,7 +426,7 @@ export function SupportWorkspace() {
               </Card>
 
               {/* Tabs: Recent Orders & Interaction History */}
-              <Card className="border shadow-sm">
+              <Card className="border shadow-sm p-0 gap-0 overflow-hidden">
                 <CardContent className="p-4 sm:p-5">
                   <Tabs defaultValue="orders">
                     <TabsList className="grid w-full grid-cols-2 bg-muted/60 p-1">
@@ -484,34 +471,36 @@ export function SupportWorkspace() {
                           <p className="text-xs text-muted-foreground">주문 이력이 없습니다.</p>
                         </div>
                       ) : (
-                        <div className="space-y-2">
-                          {orders.map((order) => (
-                            <div
-                              key={order.transaction_id}
-                              className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-card/60 p-3 shadow-2xs transition-colors hover:bg-muted/30"
-                            >
-                              <div className="flex items-center gap-3">
-                                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                                  <Package className="h-4 w-4" />
+                        <ScrollArea className="h-60 sm:h-64">
+                          <div className="space-y-2 pr-3 pb-2">
+                            {orders.map((order) => (
+                              <div
+                                key={order.transaction_id}
+                                className="flex flex-wrap items-center justify-between gap-3 rounded-xl border bg-card/60 p-3 shadow-2xs transition-colors hover:bg-muted/30"
+                              >
+                                <div className="flex items-center gap-3">
+                                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                    <Package className="h-4 w-4" />
+                                  </div>
+                                  <div>
+                                    <p className="text-xs font-semibold text-foreground sm:text-sm">
+                                      {order.product_name}
+                                    </p>
+                                    <p className="text-[11px] text-muted-foreground mt-0.5">
+                                      {order.product_category} · {order.product_sub_category}
+                                    </p>
+                                  </div>
                                 </div>
-                                <div>
-                                  <p className="text-xs font-semibold text-foreground sm:text-sm">
-                                    {order.product_name}
-                                  </p>
-                                  <p className="text-[11px] text-muted-foreground mt-0.5">
-                                    {order.product_category} · {order.product_sub_category}
-                                  </p>
+                                <div className="text-right text-[11px] text-muted-foreground">
+                                  <span className="flex items-center gap-1">
+                                    <Calendar className="h-3 w-3" />
+                                    {formatTimestamp(order.ordered_at)}
+                                  </span>
                                 </div>
                               </div>
-                              <div className="text-right text-[11px] text-muted-foreground">
-                                <span className="flex items-center gap-1">
-                                  <Calendar className="h-3 w-3" />
-                                  {formatTimestamp(order.ordered_at)}
-                                </span>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
+                            ))}
+                          </div>
+                        </ScrollArea>
                       )}
                     </TabsContent>
 
@@ -530,24 +519,26 @@ export function SupportWorkspace() {
                           <p className="text-xs text-muted-foreground">이전 상담 이력이 없습니다.</p>
                         </div>
                       ) : (
-                        <div className="space-y-2.5">
-                          {history.map((item) => (
-                            <div key={item.interaction_id} className="rounded-xl border bg-card/60 p-3.5 shadow-2xs">
-                              <div className="flex items-center justify-between gap-2">
-                                <Badge variant="outline" className="text-[10px] font-semibold">
-                                  {item.issue_category}
-                                </Badge>
-                                <span className="text-[11px] text-muted-foreground flex items-center gap-1">
-                                  <Clock3 className="h-3 w-3" />
-                                  {formatTimestamp(item.interacted_at)}
-                                </span>
+                        <ScrollArea className="h-60 sm:h-64">
+                          <div className="space-y-2.5 pr-3 pb-2">
+                            {history.map((item) => (
+                              <div key={item.interaction_id} className="rounded-xl border bg-card/60 p-3.5 shadow-2xs">
+                                <div className="flex items-center justify-between gap-2">
+                                  <Badge variant="outline" className="text-[10px] font-semibold">
+                                    {item.issue_category}
+                                  </Badge>
+                                  <span className="text-[11px] text-muted-foreground flex items-center gap-1">
+                                    <Clock3 className="h-3 w-3" />
+                                    {formatTimestamp(item.interacted_at)}
+                                  </span>
+                                </div>
+                                <p className="mt-2 text-xs leading-relaxed text-foreground sm:text-sm">
+                                  {item.issue_description}
+                                </p>
                               </div>
-                              <p className="mt-2 text-xs leading-relaxed text-foreground sm:text-sm">
-                                {item.issue_description}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
+                            ))}
+                          </div>
+                        </ScrollArea>
                       )}
                     </TabsContent>
                   </Tabs>
@@ -566,8 +557,8 @@ export function SupportWorkspace() {
           />
 
           {/* Retrieved Sources Card */}
-          <Card className="border shadow-sm">
-            <CardHeader className="border-b bg-card/60 pb-3">
+          <Card className="flex flex-col overflow-hidden border shadow-sm p-0 gap-0">
+            <CardHeader className="shrink-0 border-b bg-card/60 px-4 py-3 sm:px-5">
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2 text-sm font-semibold tracking-tight sm:text-base">
                   <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary/10 text-primary">
@@ -583,50 +574,54 @@ export function SupportWorkspace() {
               </div>
               <p className="text-xs text-muted-foreground">선택한 문의와 관련된 정책·상품 문서</p>
             </CardHeader>
-            <CardContent className="pt-3">
+            <CardContent className="p-0">
               {sourcesLoading ? (
-                <div className="space-y-2">
+                <div className="space-y-2 p-4">
                   {sourceSkeletonKeys.map((key) => (
                     <Skeleton key={key} className="h-16 w-full rounded-lg" />
                   ))}
                 </div>
               ) : sourcesError ? (
-                <QueryError />
+                <div className="p-4">
+                  <QueryError />
+                </div>
               ) : !sources?.length ? (
                 <p className="py-8 text-center text-xs text-muted-foreground">
                   상담을 선택하면 관련 문서를 검색합니다.
                 </p>
               ) : (
-                <div className="space-y-2">
-                  {sources.map((source) => {
-                    const preview = toReadableSourcePreview(source.content, 160, source.title);
-                    const isPolicy = source.source_type === 'policy';
-                    return (
-                      <div
-                        key={source.document_id}
-                        className="rounded-xl border bg-card/60 p-3 shadow-2xs transition-colors hover:bg-muted/20"
-                      >
-                        <div className="flex items-center justify-between gap-2">
-                          <div className="flex items-center gap-1.5 min-w-0">
-                            <FileText className="h-3.5 w-3.5 shrink-0 text-primary" />
-                            <p className="truncate text-xs font-semibold text-foreground">{source.title}</p>
+                <ScrollArea className="h-60 sm:h-64">
+                  <div className="space-y-2.5 p-3.5 sm:p-4 pr-4">
+                    {sources.map((source) => {
+                      const preview = toReadableSourcePreview(source.content, 160, source.title);
+                      const isPolicy = source.source_type === 'policy';
+                      return (
+                        <div
+                          key={source.document_id}
+                          className="rounded-xl border bg-card/60 p-3 shadow-2xs transition-colors hover:bg-muted/20"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <div className="flex items-center gap-1.5 min-w-0">
+                              <FileText className="h-3.5 w-3.5 shrink-0 text-primary" />
+                              <p className="truncate text-xs font-semibold text-foreground">{source.title}</p>
+                            </div>
+                            <Badge
+                              variant={isPolicy ? 'default' : 'outline'}
+                              className="shrink-0 text-[10px] px-1.5 py-0 h-4.5"
+                            >
+                              {isPolicy ? '정책' : '상품 문서'}
+                            </Badge>
                           </div>
-                          <Badge
-                            variant={isPolicy ? 'default' : 'outline'}
-                            className="shrink-0 text-[10px] px-1.5 py-0 h-4.5"
-                          >
-                            {isPolicy ? '정책' : '상품 문서'}
-                          </Badge>
+                          {preview ? (
+                            <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-muted-foreground">
+                              {preview}
+                            </p>
+                          ) : null}
                         </div>
-                        {preview ? (
-                          <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-muted-foreground">
-                            {preview}
-                          </p>
-                        ) : null}
-                      </div>
-                    );
-                  })}
-                </div>
+                      );
+                    })}
+                  </div>
+                </ScrollArea>
               )}
             </CardContent>
           </Card>
