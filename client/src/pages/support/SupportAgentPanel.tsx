@@ -122,7 +122,7 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
   };
 
   return (
-    <Card className="flex min-h-[35rem] flex-col overflow-hidden border shadow-sm p-0 gap-0">
+    <Card className="flex h-full min-h-0 flex-col overflow-hidden border shadow-sm p-0 gap-0">
       <CardHeader className="shrink-0 border-b bg-muted/20 px-4 py-3.5 sm:px-5">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2.5">
@@ -150,10 +150,10 @@ export function SupportAgentPanel({ context, disabled = false }: SupportAgentPan
         </div>
       </CardHeader>
 
-      <CardContent className="flex min-h-0 flex-1 flex-col justify-between p-0">
-        <ScrollArea className="h-[27rem] p-4 sm:p-5" ref={scrollRef}>
+      <CardContent className="flex min-h-0 flex-1 flex-col justify-between p-0 overflow-hidden">
+        <ScrollArea className="h-full flex-1 min-h-0 p-4 sm:p-5" ref={scrollRef}>
           {messages.length === 0 ? (
-            <div className="flex h-72 flex-col items-center justify-center rounded-xl border border-dashed border-border/80 bg-muted/10 p-6 text-center">
+            <div className="flex h-full min-h-[16rem] flex-col items-center justify-center rounded-xl border border-dashed border-border/80 bg-muted/10 p-6 text-center">
               <div className="mb-3.5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 shadow-xs ring-1 ring-primary/20">
                 <Sparkles className="h-6 w-6 text-primary" />
               </div>

@@ -5,10 +5,18 @@ import {
   Avatar,
   AvatarFallback,
   Badge,
+  Button,
   Card,
   CardContent,
   CardHeader,
   CardTitle,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
   Empty,
   EmptyDescription,
   EmptyHeader,
@@ -27,10 +35,14 @@ import { sql } from '@databricks/appkit-ui/js';
 import {
   BookOpen,
   Calendar,
+  Check,
   Clock3,
+  Copy,
+  ExternalLink,
   FileText,
   Mail,
   MapPin,
+  Maximize2,
   MessageSquare,
   Package,
   Phone,
@@ -40,12 +52,20 @@ import {
   UserRound,
   X,
 } from 'lucide-react';
-import { formatCustomerLevel, toReadableSourcePreview } from '../../lib/display';
+import { formatCustomerLevel, toCleanFullDocumentText, toReadableSourcePreview } from '../../lib/display';
 import { SupportAgentPanel } from './SupportAgentPanel';
 
 interface Viewer {
   email: string | null;
   user: string | null;
+}
+
+interface SourceItem {
+  document_id: string;
+  source_type: string;
+  source_id: string;
+  title: string;
+  content: string;
 }
 
 const queueSkeletonKeys = ['queue-1', 'queue-2', 'queue-3', 'queue-4', 'queue-5', 'queue-6'];
@@ -100,6 +120,115 @@ function getLevelBadgeVariant(level: string | null | undefined): 'default' | 'se
   if (normalized.includes('vip') || normalized.includes('gold')) return 'default';
   if (normalized.includes('silver')) return 'secondary';
   return 'outline';
+}
+
+function AddressDetailDialog({ address, customerName }: { address: string; customerName: string }) {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(address);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="h-6 gap-1 px-1.5 text-[11px] font-medium text-primary hover:bg-primary/10 hover:text-primary shrink-0"
+        >
+          <ExternalLink className="h-3 w-3" />
+          <span>전문 보기</span>
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-md p-0 gap-0 overflow-hidden">
+        <DialogHeader className="border-b bg-muted/20 p-4 sm:p-5">
+          <DialogTitle className="flex items-center gap-2 text-base font-semibold">
+            <MapPin className="h-4 w-4 text-primary" />
+            <span>배송지 주소 전문</span>
+          </DialogTitle>
+          <DialogDescription className="text-xs text-muted-foreground">
+            {customerName} 고객의 전체 배송지 주소입니다.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="p-5">
+          <div className="rounded-xl border bg-muted/30 p-4 text-sm font-medium leading-relaxed text-foreground select-all">
+            {address}
+          </div>
+        </div>
+        <DialogFooter className="flex items-center justify-between border-t bg-muted/10 p-3 sm:px-5">
+          <Button variant="outline" size="sm" onClick={() => setOpen(false)}>
+            닫기
+          </Button>
+          <Button size="sm" onClick={() => void handleCopy()} className="gap-1.5">
+            {copied ? <Check className="h-3.5 w-3.5 text-success" /> : <Copy className="h-3.5 w-3.5" />}
+            <span>{copied ? '복사됨!' : '주소 복사'}</span>
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function DocumentDetailDialog({ source }: { source: SourceItem }) {
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const cleanBody = toCleanFullDocumentText(source.content);
+  const isPolicy = source.source_type === 'policy';
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(cleanBody);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="h-6 gap-1 px-1.5 text-[10px] font-medium text-primary hover:bg-primary/10 hover:text-primary shrink-0"
+        >
+          <Maximize2 className="h-3 w-3" />
+          <span>전문 보기</span>
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="max-w-2xl max-h-[85vh] flex flex-col p-0 gap-0 overflow-hidden">
+        <DialogHeader className="shrink-0 border-b bg-muted/20 p-4 sm:p-5">
+          <div className="flex items-center justify-between gap-3 pr-6">
+            <DialogTitle className="flex items-center gap-2 text-base font-bold tracking-tight">
+              <FileText className="h-4 w-4 text-primary" />
+              <span>{source.title}</span>
+            </DialogTitle>
+            <Badge variant={isPolicy ? 'default' : 'outline'} className="text-[10px]">
+              {isPolicy ? '정책' : '상품 문서'}
+            </Badge>
+          </div>
+          <DialogDescription className="text-xs text-muted-foreground mt-1">
+            문서 ID: {source.source_id}
+          </DialogDescription>
+        </DialogHeader>
+        <ScrollArea className="flex-1 max-h-[60vh] p-5">
+          <div className="whitespace-pre-wrap text-xs sm:text-sm leading-relaxed text-foreground font-normal">
+            {cleanBody || '문서 내용이 비어 있습니다.'}
+          </div>
+        </ScrollArea>
+        <DialogFooter className="shrink-0 flex items-center justify-between border-t bg-muted/10 p-3 sm:px-5">
+          <Button variant="outline" size="sm" onClick={() => setOpen(false)}>
+            닫기
+          </Button>
+          <Button size="sm" onClick={() => void handleCopy()} className="gap-1.5">
+            {copied ? <Check className="h-3.5 w-3.5 text-success" /> : <Copy className="h-3.5 w-3.5" />}
+            <span>{copied ? '복사됨!' : '본문 복사'}</span>
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  );
 }
 
 export function SupportWorkspace() {
@@ -192,10 +321,10 @@ export function SupportWorkspace() {
   }, [detail, history, orders, sources]);
 
   return (
-    <div className="min-h-screen bg-muted/20 text-foreground">
+    <div className="flex h-screen flex-col overflow-hidden bg-muted/20 text-foreground">
       {/* Top App Header */}
-      <header className="sticky top-0 z-20 border-b bg-background/85 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1880px] items-center justify-between px-4 py-3 sm:px-6">
+      <header className="shrink-0 z-20 border-b bg-background/85 backdrop-blur-md">
+        <div className="mx-auto flex h-14 max-w-[1880px] items-center justify-between px-4 sm:px-6">
           <div>
             <h1 className="text-base font-bold tracking-tight sm:text-lg">Support Copilot</h1>
           </div>
@@ -211,9 +340,9 @@ export function SupportWorkspace() {
       </header>
 
       {/* Main 3-Column Workspace */}
-      <main className="mx-auto grid max-w-[1880px] gap-4 p-4 lg:grid-cols-[330px_minmax(0,1fr)_440px] lg:p-6">
+      <main className="mx-auto grid h-[calc(100vh-3.5rem)] max-w-[1880px] w-full flex-1 min-h-0 gap-4 p-4 lg:grid-cols-[330px_minmax(0,1fr)_440px] lg:p-5 overflow-hidden">
         {/* Left Column: Recent Interactions List */}
-        <Card className="flex h-[calc(100vh-5.5rem)] flex-col overflow-hidden border shadow-sm p-0 gap-0">
+        <Card className="flex h-full min-h-0 flex-col overflow-hidden border shadow-sm p-0 gap-0">
           <CardHeader className="shrink-0 border-b bg-card/60 px-4 py-3 sm:px-5">
             <div className="flex items-center justify-between">
               <CardTitle className="text-sm font-semibold tracking-tight sm:text-base">최근 상담</CardTitle>
@@ -319,7 +448,7 @@ export function SupportWorkspace() {
         </Card>
 
         {/* Center Column: Customer Context & History */}
-        <div className="min-w-0 space-y-4">
+        <div className="flex h-full min-h-0 flex-col gap-4 min-w-0 overflow-hidden">
           {detailLoading ? (
             <div className="space-y-4">
               <Skeleton className="h-56 w-full rounded-xl" />
@@ -339,7 +468,7 @@ export function SupportWorkspace() {
           ) : (
             <>
               {/* Customer Detail Card */}
-              <Card className="border shadow-sm p-0 gap-0 overflow-hidden">
+              <Card className="shrink-0 border shadow-sm p-0 gap-0 overflow-hidden">
                 <CardHeader className="shrink-0 border-b bg-card/60 px-4 py-3.5 sm:px-5">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
@@ -374,10 +503,10 @@ export function SupportWorkspace() {
                     </Badge>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4 p-4 sm:p-5">
+                <CardContent className="space-y-3.5 p-4 sm:p-5">
                   {/* Current Issue Callout Box */}
-                  <div className="relative rounded-xl border border-primary/20 bg-primary/[0.03] p-4">
-                    <div className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-primary">
+                  <div className="relative rounded-xl border border-primary/20 bg-primary/[0.03] p-3.5">
+                    <div className="mb-1 flex items-center gap-1.5 text-xs font-semibold text-primary">
                       <MessageSquare className="h-3.5 w-3.5" />
                       <span>문의 내용</span>
                     </div>
@@ -394,7 +523,7 @@ export function SupportWorkspace() {
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
                         <Mail className="h-3.5 w-3.5" />
                       </div>
-                      <div className="min-w-0">
+                      <div className="min-w-0 flex-1">
                         <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">이메일</p>
                         <p className="truncate font-medium text-foreground">{detail.email || '—'}</p>
                       </div>
@@ -404,32 +533,39 @@ export function SupportWorkspace() {
                       <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
                         <Phone className="h-3.5 w-3.5" />
                       </div>
-                      <div className="min-w-0">
+                      <div className="min-w-0 flex-1">
                         <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">연락처</p>
                         <p className="truncate font-medium text-foreground">{detail.phone || '—'}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2.5 rounded-lg border bg-background/50 p-2.5 shadow-2xs sm:col-span-2 xl:col-span-1">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
-                        <MapPin className="h-3.5 w-3.5" />
+                    <div className="flex items-center justify-between gap-2.5 rounded-lg border bg-background/50 p-2.5 shadow-2xs sm:col-span-2 xl:col-span-1">
+                      <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-muted text-muted-foreground">
+                          <MapPin className="h-3.5 w-3.5" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                            배송지 주소
+                          </p>
+                          <p className="truncate font-medium text-foreground" title={detail.address || undefined}>
+                            {detail.address || '—'}
+                          </p>
+                        </div>
                       </div>
-                      <div className="min-w-0">
-                        <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                          배송지 주소
-                        </p>
-                        <p className="truncate font-medium text-foreground">{detail.address || '—'}</p>
-                      </div>
+                      {detail.address ? (
+                        <AddressDetailDialog address={detail.address} customerName={detail.customer_name} />
+                      ) : null}
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
               {/* Tabs: Recent Orders & Interaction History */}
-              <Card className="border shadow-sm p-0 gap-0 overflow-hidden">
-                <CardContent className="p-4 sm:p-5">
-                  <Tabs defaultValue="orders">
-                    <TabsList className="grid w-full grid-cols-2 bg-muted/60 p-1">
+              <Card className="flex flex-1 min-h-0 flex-col overflow-hidden border shadow-sm p-0 gap-0">
+                <CardContent className="flex flex-1 min-h-0 flex-col p-4 sm:p-5 overflow-hidden">
+                  <Tabs defaultValue="orders" className="flex flex-1 min-h-0 flex-col overflow-hidden">
+                    <TabsList className="shrink-0 grid w-full grid-cols-2 bg-muted/60 p-1">
                       <TabsTrigger
                         value="orders"
                         className="flex items-center gap-2 text-xs font-semibold data-[state=active]:shadow-xs"
@@ -457,7 +593,7 @@ export function SupportWorkspace() {
                     </TabsList>
 
                     {/* Orders Tab Content */}
-                    <TabsContent value="orders" className="mt-4">
+                    <TabsContent value="orders" className="flex-1 min-h-0 flex flex-col mt-3.5 overflow-hidden">
                       {ordersLoading ? (
                         <div className="space-y-2.5">
                           <Skeleton className="h-16 w-full rounded-lg" />
@@ -471,8 +607,8 @@ export function SupportWorkspace() {
                           <p className="text-xs text-muted-foreground">주문 이력이 없습니다.</p>
                         </div>
                       ) : (
-                        <ScrollArea className="h-60 sm:h-64">
-                          <div className="space-y-2 pr-3 pb-2">
+                        <ScrollArea className="h-full">
+                          <div className="space-y-2 pr-3 pb-6">
                             {orders.map((order) => (
                               <div
                                 key={order.transaction_id}
@@ -505,7 +641,7 @@ export function SupportWorkspace() {
                     </TabsContent>
 
                     {/* History Tab Content */}
-                    <TabsContent value="history" className="mt-4">
+                    <TabsContent value="history" className="flex-1 min-h-0 flex flex-col mt-3.5 overflow-hidden">
                       {historyLoading ? (
                         <div className="space-y-2.5">
                           <Skeleton className="h-20 w-full rounded-lg" />
@@ -519,8 +655,8 @@ export function SupportWorkspace() {
                           <p className="text-xs text-muted-foreground">이전 상담 이력이 없습니다.</p>
                         </div>
                       ) : (
-                        <ScrollArea className="h-60 sm:h-64">
-                          <div className="space-y-2.5 pr-3 pb-2">
+                        <ScrollArea className="h-full">
+                          <div className="space-y-2.5 pr-3 pb-6">
                             {history.map((item) => (
                               <div key={item.interaction_id} className="rounded-xl border bg-card/60 p-3.5 shadow-2xs">
                                 <div className="flex items-center justify-between gap-2">
@@ -549,15 +685,17 @@ export function SupportWorkspace() {
         </div>
 
         {/* Right Column: AI Assistant & Retrieved Evidence */}
-        <div className="min-w-0 space-y-4">
-          <SupportAgentPanel
-            key={effectiveInteractionId || 'empty'}
-            context={agentContext}
-            disabled={detailLoading || ordersLoading || historyLoading || sourcesLoading}
-          />
+        <div className="flex h-full min-h-0 flex-col gap-4 overflow-hidden">
+          <div className="flex flex-[1.3] min-h-0 flex-col overflow-hidden">
+            <SupportAgentPanel
+              key={effectiveInteractionId || 'empty'}
+              context={agentContext}
+              disabled={detailLoading || ordersLoading || historyLoading || sourcesLoading}
+            />
+          </div>
 
           {/* Retrieved Sources Card */}
-          <Card className="flex flex-col overflow-hidden border shadow-sm p-0 gap-0">
+          <Card className="flex flex-1 min-h-0 flex-col overflow-hidden border shadow-sm p-0 gap-0">
             <CardHeader className="shrink-0 border-b bg-card/60 px-4 py-3 sm:px-5">
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2 text-sm font-semibold tracking-tight sm:text-base">
@@ -574,7 +712,7 @@ export function SupportWorkspace() {
               </div>
               <p className="text-xs text-muted-foreground">선택한 문의와 관련된 정책·상품 문서</p>
             </CardHeader>
-            <CardContent className="p-0">
+            <CardContent className="flex-1 min-h-0 p-0 overflow-hidden">
               {sourcesLoading ? (
                 <div className="space-y-2 p-4">
                   {sourceSkeletonKeys.map((key) => (
@@ -590,8 +728,8 @@ export function SupportWorkspace() {
                   상담을 선택하면 관련 문서를 검색합니다.
                 </p>
               ) : (
-                <ScrollArea className="h-60 sm:h-64">
-                  <div className="space-y-2.5 p-3.5 sm:p-4 pr-4">
+                <ScrollArea className="h-full">
+                  <div className="space-y-2.5 p-3.5 sm:p-4 pr-4 pb-6">
                     {sources.map((source) => {
                       const preview = toReadableSourcePreview(source.content, 160, source.title);
                       const isPolicy = source.source_type === 'policy';
@@ -605,12 +743,15 @@ export function SupportWorkspace() {
                               <FileText className="h-3.5 w-3.5 shrink-0 text-primary" />
                               <p className="truncate text-xs font-semibold text-foreground">{source.title}</p>
                             </div>
-                            <Badge
-                              variant={isPolicy ? 'default' : 'outline'}
-                              className="shrink-0 text-[10px] px-1.5 py-0 h-4.5"
-                            >
-                              {isPolicy ? '정책' : '상품 문서'}
-                            </Badge>
+                            <div className="flex items-center gap-1.5 shrink-0">
+                              <Badge
+                                variant={isPolicy ? 'default' : 'outline'}
+                                className="text-[10px] px-1.5 py-0 h-4.5"
+                              >
+                                {isPolicy ? '정책' : '상품 문서'}
+                              </Badge>
+                              <DocumentDetailDialog source={source} />
+                            </div>
                           </div>
                           {preview ? (
                             <p className="mt-1.5 line-clamp-2 text-[11px] leading-relaxed text-muted-foreground">

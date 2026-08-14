@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatCustomerLevel, toReadableSourcePreview } from './display';
+import { formatCustomerLevel, toCleanFullDocumentText, toReadableSourcePreview } from './display';
 
 describe('toReadableSourcePreview', () => {
   it('extracts product_doc text and drops index markup', () => {
@@ -36,6 +36,14 @@ describe('toReadableSourcePreview', () => {
     expect(preview.endsWith('…')).toBe(true);
     expect(preview).not.toContain('<p>');
     expect(preview.length).toBeLessThanOrEqual(41);
+  });
+});
+
+describe('toCleanFullDocumentText', () => {
+  it('extracts full body without XML tags and preserves content', () => {
+    const full = toCleanFullDocumentText('<product_doc>전체 상품 설명 문장 1.\n전체 상품 설명 문장 2.</product_doc>');
+    expect(full).toBe('전체 상품 설명 문장 1.\n전체 상품 설명 문장 2.');
+    expect(full).not.toContain('<product_doc>');
   });
 });
 

@@ -43,3 +43,18 @@ export function toReadableSourcePreview(content: string | null | undefined, maxL
   if (text.length <= maxLength) return text;
   return `${text.slice(0, maxLength).trimEnd()}…`;
 }
+
+export function toCleanFullDocumentText(content: string | null | undefined): string {
+  if (!content) return '';
+
+  const taggedBody = content.match(PRODUCT_DOC_PATTERN)?.[1] ?? content.match(POLICY_DETAILS_PATTERN)?.[1];
+  const body = taggedBody ?? content;
+
+  return body
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .trim();
+}
