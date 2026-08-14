@@ -560,6 +560,7 @@ export function SupportWorkspace() {
         {/* Right Column: AI Assistant & Retrieved Evidence */}
         <div className="min-w-0 space-y-4">
           <SupportAgentPanel
+            key={effectiveInteractionId || 'empty'}
             context={agentContext}
             disabled={detailLoading || ordersLoading || historyLoading || sourcesLoading}
           />
