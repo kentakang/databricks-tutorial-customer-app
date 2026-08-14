@@ -29,6 +29,7 @@ Node.js 22.16 이상(22.x), npm, Databricks CLI와 선택한 OAuth 프로필이 
 
 ```powershell
 npm ci
+npm run typegen
 npm run dev
 ```
 
@@ -50,14 +51,22 @@ databricks apps validate --profile codex-databricks
 
 ## 기존 App에 연결하고 배포
 
-배포 전에 Bundle의 `app` 리소스를 미리 만든 App ID에 한 번 연결합니다. 연결 후 이 App은 Bundle이 관리하므로 UI의 수동 변경이 다음 배포에서 덮어써질 수 있습니다.
+권장 방식은 Bundle의 `app` 리소스를 미리 만든 App ID에 한 번 연결한 뒤 `apps deploy`를 사용하는 것입니다. 연결 후 이 App은 Bundle이 관리하므로 UI의 수동 변경이 다음 배포에서 덮어써질 수 있습니다.
 
 ```powershell
 databricks bundle deployment bind app 1ea7e2d7-f158-4a9a-bb31-6532b34ed67b --auto-approve --profile codex-databricks
-databricks bundle deploy --profile codex-databricks
+databricks apps deploy --profile codex-databricks
 ```
 
 앱 리소스 선언은 서비스 주체에 SQL Warehouse `CAN_USE`, Qwen 모델 `CAN_QUERY`, 필요한 Delta 테이블과 AI Search 인덱스 `SELECT`만 부여합니다.
+
+Databricks UI에서 Git branch를 직접 배포하는 경우 Bundle 리소스 선언은 적용되지 않습니다. 첫 Git 배포 전에 다음 명령으로 동일한 최소 권한 리소스를 App에 연결합니다.
+
+```powershell
+databricks apps create-update tutorial-customer-app --json '@databricks/config/app-resources.json' --profile codex-databricks
+```
+
+배포 이미지의 `npm install`과 `npm run build`는 외부 Warehouse에 접속하지 않습니다. SQL/Serving 타입은 개발 중 `npm run typegen`으로 갱신하고 생성 파일을 커밋합니다.
 
 ## 설계 문서
 

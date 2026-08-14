@@ -1,0 +1,69 @@
+{
+  "update_mask": "resources",
+  "app": {
+    "resources": [
+      {
+        "name": "agents-serving-endpoint",
+        "serving_endpoint": {
+          "name": "databricks-qwen3-next-80b-a3b-instruct",
+          "permission": "CAN_QUERY"
+        }
+      },
+      {
+        "name": "sql-warehouse",
+        "sql_warehouse": {
+          "id": "701725258168e981",
+          "permission": "CAN_USE"
+        }
+      },
+      {
+        "name": "support-docs-index",
+        "uc_securable": {
+          "securable_full_name": "customer_support_rag.support.support_docs_index",
+          "securable_type": "TABLE",
+          "permission": "SELECT"
+        }
+      },
+      {
+        "name": "customer-table",
+        "uc_securable": {
+          "securable_full_name": "customer_support_rag.support.customer",
+          "securable_type": "TABLE",
+          "permission": "SELECT"
+        }
+      },
+      {
+        "name": "orders-table",
+        "uc_securable": {
+          "securable_full_name": "customer_support_rag.support.orders",
+          "securable_type": "TABLE",
+          "permission": "SELECT"
+        }
+      },
+      {
+        "name": "interactions-table",
+        "uc_securable": {
+          "securable_full_name": "customer_support_rag.support.cust_service",
+          "securable_type": "TABLE",
+          "permission": "SELECT"
+        }
+      },
+      {
+        "name": "product-docs-table",
+        "uc_securable": {
+          "securable_full_name": "customer_support_rag.support.product_docs",
+          "securable_type": "TABLE",
+          "permission": "SELECT"
+        }
+      },
+      {
+        "name": "policies-table",
+        "uc_securable": {
+          "securable_full_name": "customer_support_rag.support.policies",
+          "securable_type": "TABLE",
+          "permission": "SELECT"
+        }
+      }
+    ]
+  }
+}
