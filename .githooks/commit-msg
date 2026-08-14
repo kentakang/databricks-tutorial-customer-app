@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+set -eu
+
+message_file="$1"
+subject=$(sed -n '1p' "$message_file")
+
+# Allow Git-generated merge subjects and autosquash commits.
+case "$subject" in
+  Merge\ *|fixup\!*|squash\!*)
+    exit 0
+    ;;
+esac
+
+pattern='^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9][a-z0-9._/-]*\))?!?: .+'
+
+if ! printf '%s\n' "$subject" | grep -Eq "$pattern"; then
+  cat >&2 <<'EOF'
+Invalid commit message.
+
+Use Conventional Commits:
+  <type>(<optional-scope>): <description>
+
+Examples:
+  feat(customer): add customer search
+  fix(auth): handle expired workspace token
+  docs: record analytics data decision
+EOF
+  exit 1
+fi
+
