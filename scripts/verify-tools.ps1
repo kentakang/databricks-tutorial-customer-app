@@ -54,4 +54,3 @@ Write-Host "Databricks agent skills: $skillCount"
 Write-Host ""
 Write-Host "Available Databricks CLI profiles (select one explicitly before workspace operations):"
 databricks auth profiles
-

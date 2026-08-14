@@ -17,4 +17,3 @@ $skills = @(
 ) -join ","
 
 databricks aitools install --path .agents/skills --skills $skills
-

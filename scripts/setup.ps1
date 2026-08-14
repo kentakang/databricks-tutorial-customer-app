@@ -25,4 +25,3 @@ if (-not $SkipGitHooks) {
 
 Write-Host "Toolchain setup is complete."
 Write-Host "Run scripts/verify-tools.ps1, then choose a Databricks CLI profile explicitly for workspace commands."
-
