@@ -1,301 +1,301 @@
-user_id,display_name,email,birth_year,gender,country_code,preferred_language,signup_date,subscription_plan,preferred_genre,marketing_opt_in,account_status
-USR0001,viewer_0001,viewer0001@example.invalid,1968,male,AU,en,2023-09-07,Standard,Science Fiction,false,active
-USR0002,viewer_0002,viewer0002@example.invalid,1991,non_binary,FR,fr,2025-09-23,Basic,Documentary,true,cancelled
-USR0003,viewer_0003,viewer0003@example.invalid,1981,prefer_not_to_say,US,en,2024-09-07,Standard,Horror,false,active
-USR0004,viewer_0004,viewer0004@example.invalid,1978,female,IN,hi,2025-11-26,Basic,Thriller,false,active
-USR0005,viewer_0005,viewer0005@example.invalid,1968,prefer_not_to_say,DE,de,2021-04-13,Premium,Action,false,paused
-USR0006,viewer_0006,viewer0006@example.invalid,1966,female,JP,ja,2021-06-05,Standard,Fantasy,true,active
-USR0007,viewer_0007,viewer0007@example.invalid,1959,male,BR,pt,2023-05-25,Basic,Comedy,true,cancelled
-USR0008,viewer_0008,viewer0008@example.invalid,1998,female,CA,en,2023-05-24,Standard,Romance,false,active
-USR0009,viewer_0009,viewer0009@example.invalid,1955,prefer_not_to_say,GB,en,2024-05-29,Standard,Animation,false,active
-USR0010,viewer_0010,viewer0010@example.invalid,1974,male,KR,ko,2025-11-25,Standard,Drama,true,active
-USR0011,viewer_0011,viewer0011@example.invalid,1996,prefer_not_to_say,AU,en,2023-10-11,Standard,Science Fiction,false,paused
-USR0012,viewer_0012,viewer0012@example.invalid,1995,female,FR,fr,2024-01-29,Basic,Documentary,true,active
-USR0013,viewer_0013,viewer0013@example.invalid,1957,prefer_not_to_say,US,en,2023-09-19,Basic,Horror,false,active
-USR0014,viewer_0014,viewer0014@example.invalid,1959,male,IN,hi,2021-02-17,Premium,Thriller,false,active
-USR0015,viewer_0015,viewer0015@example.invalid,1995,prefer_not_to_say,DE,de,2025-03-04,Basic,Action,false,active
-USR0016,viewer_0016,viewer0016@example.invalid,1999,non_binary,JP,ja,2024-09-09,Premium,Fantasy,true,active
-USR0017,viewer_0017,viewer0017@example.invalid,1980,female,BR,pt,2023-04-05,Premium,Comedy,false,paused
-USR0018,viewer_0018,viewer0018@example.invalid,1990,male,CA,en,2021-08-08,Basic,Romance,true,active
-USR0019,viewer_0019,viewer0019@example.invalid,1959,male,GB,en,2024-12-18,Standard,Animation,false,active
-USR0020,viewer_0020,viewer0020@example.invalid,1973,female,KR,ko,2023-08-08,Standard,Drama,true,cancelled
-USR0021,viewer_0021,viewer0021@example.invalid,1990,female,AU,en,2025-07-24,Premium,Science Fiction,false,active
-USR0022,viewer_0022,viewer0022@example.invalid,1992,male,FR,fr,2023-03-24,Premium,Documentary,true,active
-USR0023,viewer_0023,viewer0023@example.invalid,1961,male,US,en,2026-01-12,Basic,Horror,true,active
-USR0024,viewer_0024,viewer0024@example.invalid,1989,male,IN,hi,2021-01-26,Basic,Thriller,true,paused
-USR0025,viewer_0025,viewer0025@example.invalid,2003,male,DE,de,2023-10-14,Premium,Action,false,active
-USR0026,viewer_0026,viewer0026@example.invalid,1955,non_binary,JP,ja,2021-04-16,Standard,Fantasy,false,paused
-USR0027,viewer_0027,viewer0027@example.invalid,1957,male,BR,pt,2021-05-13,Basic,Comedy,false,paused
-USR0028,viewer_0028,viewer0028@example.invalid,1974,female,CA,en,2022-05-08,Standard,Romance,true,paused
-USR0029,viewer_0029,viewer0029@example.invalid,1984,prefer_not_to_say,GB,en,2022-09-02,Standard,Animation,true,cancelled
-USR0030,viewer_0030,viewer0030@example.invalid,1977,male,KR,ko,2025-08-26,Standard,Drama,false,active
-USR0031,viewer_0031,viewer0031@example.invalid,2004,male,AU,en,2021-03-19,Basic,Science Fiction,false,active
-USR0032,viewer_0032,viewer0032@example.invalid,1962,female,FR,fr,2025-12-23,Basic,Documentary,false,active
-USR0033,viewer_0033,viewer0033@example.invalid,1981,female,US,en,2025-08-04,Premium,Horror,false,active
-USR0034,viewer_0034,viewer0034@example.invalid,1988,prefer_not_to_say,IN,hi,2024-07-22,Standard,Thriller,false,active
-USR0035,viewer_0035,viewer0035@example.invalid,2005,female,DE,de,2021-09-25,Standard,Action,false,active
-USR0036,viewer_0036,viewer0036@example.invalid,1958,female,JP,ja,2024-01-05,Basic,Fantasy,true,active
-USR0037,viewer_0037,viewer0037@example.invalid,1968,prefer_not_to_say,BR,pt,2022-04-08,Premium,Comedy,false,cancelled
-USR0038,viewer_0038,viewer0038@example.invalid,1986,non_binary,CA,en,2025-07-15,Standard,Romance,true,paused
-USR0039,viewer_0039,viewer0039@example.invalid,2001,non_binary,GB,en,2022-12-27,Basic,Animation,false,active
-USR0040,viewer_0040,viewer0040@example.invalid,1986,male,KR,ko,2024-07-15,Basic,Drama,false,active
-USR0041,viewer_0041,viewer0041@example.invalid,1983,male,AU,en,2023-11-23,Premium,Science Fiction,true,active
-USR0042,viewer_0042,viewer0042@example.invalid,1955,male,FR,fr,2023-11-15,Standard,Documentary,true,active
-USR0043,viewer_0043,viewer0043@example.invalid,1994,male,US,en,2022-01-07,Standard,Horror,false,cancelled
-USR0044,viewer_0044,viewer0044@example.invalid,1976,male,IN,hi,2022-07-07,Premium,Thriller,false,active
-USR0045,viewer_0045,viewer0045@example.invalid,2000,female,DE,de,2026-01-06,Basic,Action,true,active
-USR0046,viewer_0046,viewer0046@example.invalid,2001,female,JP,ja,2021-01-23,Premium,Fantasy,true,paused
-USR0047,viewer_0047,viewer0047@example.invalid,1972,female,BR,pt,2024-05-09,Basic,Comedy,true,active
-USR0048,viewer_0048,viewer0048@example.invalid,1994,female,CA,en,2024-09-03,Premium,Romance,false,active
-USR0049,viewer_0049,viewer0049@example.invalid,1988,male,GB,en,2021-02-21,Basic,Animation,true,active
-USR0050,viewer_0050,viewer0050@example.invalid,1961,non_binary,KR,ko,2023-08-21,Premium,Drama,false,active
-USR0051,viewer_0051,viewer0051@example.invalid,1993,prefer_not_to_say,AU,en,2023-01-05,Basic,Science Fiction,true,cancelled
-USR0052,viewer_0052,viewer0052@example.invalid,1995,female,FR,fr,2024-08-17,Basic,Documentary,false,active
-USR0053,viewer_0053,viewer0053@example.invalid,1966,prefer_not_to_say,US,en,2022-06-11,Premium,Horror,true,active
-USR0054,viewer_0054,viewer0054@example.invalid,1987,female,IN,hi,2022-09-19,Premium,Thriller,true,active
-USR0055,viewer_0055,viewer0055@example.invalid,1962,prefer_not_to_say,DE,de,2025-06-10,Basic,Action,false,active
-USR0056,viewer_0056,viewer0056@example.invalid,1972,male,JP,ja,2022-01-28,Standard,Fantasy,true,active
-USR0057,viewer_0057,viewer0057@example.invalid,2000,male,BR,pt,2022-05-22,Standard,Comedy,false,paused
-USR0058,viewer_0058,viewer0058@example.invalid,1970,non_binary,CA,en,2025-12-21,Standard,Romance,false,active
-USR0059,viewer_0059,viewer0059@example.invalid,1957,male,GB,en,2025-06-07,Standard,Animation,false,active
-USR0060,viewer_0060,viewer0060@example.invalid,2005,female,KR,ko,2022-11-28,Basic,Drama,true,paused
-USR0061,viewer_0061,viewer0061@example.invalid,1977,prefer_not_to_say,AU,en,2023-08-12,Premium,Science Fiction,false,active
-USR0062,viewer_0062,viewer0062@example.invalid,1969,male,FR,fr,2023-11-19,Premium,Documentary,true,active
-USR0063,viewer_0063,viewer0063@example.invalid,1994,non_binary,US,en,2023-05-28,Basic,Horror,true,cancelled
-USR0064,viewer_0064,viewer0064@example.invalid,1969,female,IN,hi,2022-06-29,Standard,Thriller,false,active
-USR0065,viewer_0065,viewer0065@example.invalid,1961,male,DE,de,2022-04-16,Basic,Action,false,paused
-USR0066,viewer_0066,viewer0066@example.invalid,1990,female,JP,ja,2023-01-28,Premium,Fantasy,false,cancelled
-USR0067,viewer_0067,viewer0067@example.invalid,2003,male,BR,pt,2022-09-20,Standard,Comedy,false,active
-USR0068,viewer_0068,viewer0068@example.invalid,1965,non_binary,CA,en,2025-09-02,Premium,Romance,true,active
-USR0069,viewer_0069,viewer0069@example.invalid,1971,prefer_not_to_say,GB,en,2021-01-03,Basic,Animation,false,cancelled
-USR0070,viewer_0070,viewer0070@example.invalid,1969,female,KR,ko,2024-08-02,Premium,Drama,false,cancelled
-USR0071,viewer_0071,viewer0071@example.invalid,2004,prefer_not_to_say,AU,en,2023-05-23,Standard,Science Fiction,false,active
-USR0072,viewer_0072,viewer0072@example.invalid,1982,prefer_not_to_say,FR,fr,2021-04-02,Basic,Documentary,false,paused
-USR0073,viewer_0073,viewer0073@example.invalid,1999,female,US,en,2024-02-08,Premium,Horror,true,active
-USR0074,viewer_0074,viewer0074@example.invalid,1970,male,IN,hi,2022-12-19,Basic,Thriller,false,active
-USR0075,viewer_0075,viewer0075@example.invalid,1991,female,DE,de,2023-08-16,Premium,Action,false,active
-USR0076,viewer_0076,viewer0076@example.invalid,1999,male,JP,ja,2025-10-16,Premium,Fantasy,false,paused
-USR0077,viewer_0077,viewer0077@example.invalid,1960,prefer_not_to_say,BR,pt,2022-02-03,Standard,Comedy,true,active
-USR0078,viewer_0078,viewer0078@example.invalid,1979,non_binary,CA,en,2022-07-19,Standard,Romance,false,paused
-USR0079,viewer_0079,viewer0079@example.invalid,1956,prefer_not_to_say,GB,en,2024-05-08,Basic,Animation,false,active
-USR0080,viewer_0080,viewer0080@example.invalid,2006,non_binary,KR,ko,2021-01-22,Standard,Drama,true,cancelled
-USR0081,viewer_0081,viewer0081@example.invalid,1959,female,AU,en,2025-10-01,Basic,Science Fiction,false,active
-USR0082,viewer_0082,viewer0082@example.invalid,1970,male,FR,fr,2025-01-28,Premium,Documentary,false,active
-USR0083,viewer_0083,viewer0083@example.invalid,1987,female,US,en,2023-11-05,Premium,Horror,false,active
-USR0084,viewer_0084,viewer0084@example.invalid,2001,prefer_not_to_say,IN,hi,2022-03-09,Premium,Thriller,true,active
-USR0085,viewer_0085,viewer0085@example.invalid,2004,prefer_not_to_say,DE,de,2024-05-16,Standard,Action,true,cancelled
-USR0086,viewer_0086,viewer0086@example.invalid,1984,male,JP,ja,2022-04-20,Basic,Fantasy,true,cancelled
-USR0087,viewer_0087,viewer0087@example.invalid,1981,female,BR,pt,2024-06-15,Premium,Comedy,true,active
-USR0088,viewer_0088,viewer0088@example.invalid,1972,prefer_not_to_say,CA,en,2022-08-02,Standard,Romance,false,cancelled
-USR0089,viewer_0089,viewer0089@example.invalid,2002,female,GB,en,2025-04-04,Basic,Animation,false,cancelled
-USR0090,viewer_0090,viewer0090@example.invalid,1968,male,KR,ko,2021-01-14,Standard,Drama,false,paused
-USR0091,viewer_0091,viewer0091@example.invalid,1963,male,AU,en,2024-11-05,Standard,Science Fiction,false,cancelled
-USR0092,viewer_0092,viewer0092@example.invalid,1967,prefer_not_to_say,FR,fr,2023-11-30,Basic,Documentary,false,active
-USR0093,viewer_0093,viewer0093@example.invalid,1977,non_binary,US,en,2023-02-06,Premium,Horror,false,active
-USR0094,viewer_0094,viewer0094@example.invalid,1969,non_binary,IN,hi,2022-08-28,Standard,Thriller,true,active
-USR0095,viewer_0095,viewer0095@example.invalid,1985,female,DE,de,2022-08-07,Premium,Action,true,cancelled
-USR0096,viewer_0096,viewer0096@example.invalid,1998,male,JP,ja,2024-01-05,Premium,Fantasy,false,paused
-USR0097,viewer_0097,viewer0097@example.invalid,1975,prefer_not_to_say,BR,pt,2022-01-10,Basic,Comedy,true,active
-USR0098,viewer_0098,viewer0098@example.invalid,1969,male,CA,en,2022-04-05,Standard,Romance,true,active
-USR0099,viewer_0099,viewer0099@example.invalid,1964,male,GB,en,2022-07-18,Basic,Animation,false,active
-USR0100,viewer_0100,viewer0100@example.invalid,1982,male,KR,ko,2023-03-03,Standard,Drama,true,cancelled
-USR0101,viewer_0101,viewer0101@example.invalid,1998,prefer_not_to_say,AU,en,2025-08-15,Premium,Science Fiction,false,cancelled
-USR0102,viewer_0102,viewer0102@example.invalid,1983,prefer_not_to_say,FR,fr,2023-09-05,Premium,Documentary,false,cancelled
-USR0103,viewer_0103,viewer0103@example.invalid,1958,female,US,en,2025-01-16,Standard,Horror,true,active
-USR0104,viewer_0104,viewer0104@example.invalid,1995,non_binary,IN,hi,2025-09-23,Standard,Thriller,true,active
-USR0105,viewer_0105,viewer0105@example.invalid,1963,female,DE,de,2023-06-29,Standard,Action,false,active
-USR0106,viewer_0106,viewer0106@example.invalid,2007,non_binary,JP,ja,2021-08-06,Standard,Fantasy,false,active
-USR0107,viewer_0107,viewer0107@example.invalid,1999,female,BR,pt,2025-05-25,Standard,Comedy,true,paused
-USR0108,viewer_0108,viewer0108@example.invalid,1995,non_binary,CA,en,2021-06-26,Standard,Romance,true,active
-USR0109,viewer_0109,viewer0109@example.invalid,1984,female,GB,en,2025-08-09,Premium,Animation,true,active
-USR0110,viewer_0110,viewer0110@example.invalid,1956,non_binary,KR,ko,2022-09-06,Basic,Drama,true,active
-USR0111,viewer_0111,viewer0111@example.invalid,1983,non_binary,AU,en,2023-01-06,Premium,Science Fiction,false,cancelled
-USR0112,viewer_0112,viewer0112@example.invalid,1957,non_binary,FR,fr,2026-01-05,Basic,Documentary,false,paused
-USR0113,viewer_0113,viewer0113@example.invalid,1997,non_binary,US,en,2021-08-09,Basic,Horror,false,active
-USR0114,viewer_0114,viewer0114@example.invalid,1973,prefer_not_to_say,IN,hi,2022-01-07,Standard,Thriller,false,active
-USR0115,viewer_0115,viewer0115@example.invalid,1958,prefer_not_to_say,DE,de,2021-09-23,Premium,Action,false,active
-USR0116,viewer_0116,viewer0116@example.invalid,1985,non_binary,JP,ja,2025-04-02,Premium,Fantasy,false,active
-USR0117,viewer_0117,viewer0117@example.invalid,1970,non_binary,BR,pt,2025-03-24,Premium,Comedy,false,active
-USR0118,viewer_0118,viewer0118@example.invalid,1972,male,CA,en,2022-04-15,Basic,Romance,false,active
-USR0119,viewer_0119,viewer0119@example.invalid,1958,male,GB,en,2024-02-20,Standard,Animation,false,paused
-USR0120,viewer_0120,viewer0120@example.invalid,1984,male,KR,ko,2024-11-13,Basic,Drama,false,active
-USR0121,viewer_0121,viewer0121@example.invalid,1981,prefer_not_to_say,AU,en,2022-07-04,Basic,Science Fiction,true,active
-USR0122,viewer_0122,viewer0122@example.invalid,2001,prefer_not_to_say,FR,fr,2023-12-13,Basic,Documentary,false,active
-USR0123,viewer_0123,viewer0123@example.invalid,2008,prefer_not_to_say,US,en,2025-04-21,Basic,Horror,false,paused
-USR0124,viewer_0124,viewer0124@example.invalid,1988,prefer_not_to_say,IN,hi,2022-07-31,Premium,Thriller,true,active
-USR0125,viewer_0125,viewer0125@example.invalid,1957,female,DE,de,2025-12-27,Basic,Action,false,active
-USR0126,viewer_0126,viewer0126@example.invalid,1956,male,JP,ja,2023-01-09,Standard,Fantasy,true,cancelled
-USR0127,viewer_0127,viewer0127@example.invalid,1990,prefer_not_to_say,BR,pt,2022-08-28,Premium,Comedy,false,active
-USR0128,viewer_0128,viewer0128@example.invalid,1991,female,CA,en,2023-09-15,Premium,Romance,true,cancelled
-USR0129,viewer_0129,viewer0129@example.invalid,1983,male,GB,en,2022-12-16,Basic,Animation,false,active
-USR0130,viewer_0130,viewer0130@example.invalid,2004,male,KR,ko,2022-03-14,Basic,Drama,false,active
-USR0131,viewer_0131,viewer0131@example.invalid,2002,non_binary,AU,en,2025-10-23,Basic,Science Fiction,true,active
-USR0132,viewer_0132,viewer0132@example.invalid,1964,male,FR,fr,2023-07-16,Standard,Documentary,true,paused
-USR0133,viewer_0133,viewer0133@example.invalid,1976,female,US,en,2022-04-04,Standard,Horror,false,paused
-USR0134,viewer_0134,viewer0134@example.invalid,2000,female,IN,hi,2021-08-07,Basic,Thriller,false,active
-USR0135,viewer_0135,viewer0135@example.invalid,1961,non_binary,DE,de,2025-06-24,Basic,Action,true,paused
-USR0136,viewer_0136,viewer0136@example.invalid,1974,male,JP,ja,2021-01-16,Premium,Fantasy,true,active
-USR0137,viewer_0137,viewer0137@example.invalid,1956,non_binary,BR,pt,2025-04-06,Premium,Comedy,true,active
-USR0138,viewer_0138,viewer0138@example.invalid,1982,male,CA,en,2025-08-05,Premium,Romance,false,active
-USR0139,viewer_0139,viewer0139@example.invalid,1965,male,GB,en,2025-03-08,Basic,Animation,false,active
-USR0140,viewer_0140,viewer0140@example.invalid,2004,male,KR,ko,2024-09-28,Premium,Drama,false,cancelled
-USR0141,viewer_0141,viewer0141@example.invalid,1993,female,AU,en,2024-07-22,Premium,Science Fiction,false,active
-USR0142,viewer_0142,viewer0142@example.invalid,1973,male,FR,fr,2024-01-17,Basic,Documentary,false,active
-USR0143,viewer_0143,viewer0143@example.invalid,1957,prefer_not_to_say,US,en,2025-02-11,Basic,Horror,true,cancelled
-USR0144,viewer_0144,viewer0144@example.invalid,2001,prefer_not_to_say,IN,hi,2024-11-25,Premium,Thriller,false,active
-USR0145,viewer_0145,viewer0145@example.invalid,1978,prefer_not_to_say,DE,de,2022-10-10,Basic,Action,true,active
-USR0146,viewer_0146,viewer0146@example.invalid,1961,prefer_not_to_say,JP,ja,2023-12-04,Premium,Fantasy,false,active
-USR0147,viewer_0147,viewer0147@example.invalid,1970,prefer_not_to_say,BR,pt,2021-04-07,Standard,Comedy,true,active
-USR0148,viewer_0148,viewer0148@example.invalid,1978,non_binary,CA,en,2023-01-13,Basic,Romance,true,paused
-USR0149,viewer_0149,viewer0149@example.invalid,1967,non_binary,GB,en,2022-05-07,Basic,Animation,false,active
-USR0150,viewer_0150,viewer0150@example.invalid,1957,prefer_not_to_say,KR,ko,2022-09-18,Basic,Drama,false,active
-USR0151,viewer_0151,viewer0151@example.invalid,1966,non_binary,AU,en,2022-02-01,Standard,Science Fiction,true,active
-USR0152,viewer_0152,viewer0152@example.invalid,1955,male,FR,fr,2021-01-20,Standard,Documentary,false,active
-USR0153,viewer_0153,viewer0153@example.invalid,2001,non_binary,US,en,2024-09-14,Premium,Horror,false,cancelled
-USR0154,viewer_0154,viewer0154@example.invalid,1988,non_binary,IN,hi,2025-07-25,Basic,Thriller,false,active
-USR0155,viewer_0155,viewer0155@example.invalid,1971,male,DE,de,2024-05-27,Premium,Action,false,active
-USR0156,viewer_0156,viewer0156@example.invalid,2002,non_binary,JP,ja,2025-06-30,Premium,Fantasy,false,paused
-USR0157,viewer_0157,viewer0157@example.invalid,1976,prefer_not_to_say,BR,pt,2022-04-09,Standard,Comedy,true,active
-USR0158,viewer_0158,viewer0158@example.invalid,1981,prefer_not_to_say,CA,en,2025-01-25,Basic,Romance,false,paused
-USR0159,viewer_0159,viewer0159@example.invalid,1994,male,GB,en,2025-01-13,Standard,Animation,true,paused
-USR0160,viewer_0160,viewer0160@example.invalid,1980,male,KR,ko,2021-04-20,Standard,Drama,false,active
-USR0161,viewer_0161,viewer0161@example.invalid,1987,prefer_not_to_say,AU,en,2023-05-23,Premium,Science Fiction,false,paused
-USR0162,viewer_0162,viewer0162@example.invalid,1980,female,FR,fr,2021-12-05,Standard,Documentary,false,active
-USR0163,viewer_0163,viewer0163@example.invalid,2001,male,US,en,2022-12-18,Premium,Horror,false,paused
-USR0164,viewer_0164,viewer0164@example.invalid,1995,prefer_not_to_say,IN,hi,2022-03-25,Premium,Thriller,false,active
-USR0165,viewer_0165,viewer0165@example.invalid,1990,prefer_not_to_say,DE,de,2021-03-03,Standard,Action,true,active
-USR0166,viewer_0166,viewer0166@example.invalid,1989,non_binary,JP,ja,2024-02-07,Basic,Fantasy,true,active
-USR0167,viewer_0167,viewer0167@example.invalid,2002,prefer_not_to_say,BR,pt,2023-01-13,Standard,Comedy,false,active
-USR0168,viewer_0168,viewer0168@example.invalid,1979,female,CA,en,2022-07-11,Premium,Romance,true,active
-USR0169,viewer_0169,viewer0169@example.invalid,2004,prefer_not_to_say,GB,en,2023-02-02,Basic,Animation,false,paused
-USR0170,viewer_0170,viewer0170@example.invalid,1990,female,KR,ko,2022-10-22,Basic,Drama,false,paused
-USR0171,viewer_0171,viewer0171@example.invalid,2005,prefer_not_to_say,AU,en,2022-09-15,Basic,Science Fiction,false,active
-USR0172,viewer_0172,viewer0172@example.invalid,1983,female,FR,fr,2022-01-18,Premium,Documentary,false,active
-USR0173,viewer_0173,viewer0173@example.invalid,2006,prefer_not_to_say,US,en,2022-09-20,Basic,Horror,true,active
-USR0174,viewer_0174,viewer0174@example.invalid,1966,prefer_not_to_say,IN,hi,2024-05-23,Basic,Thriller,true,active
-USR0175,viewer_0175,viewer0175@example.invalid,2006,male,DE,de,2024-07-10,Basic,Action,true,cancelled
-USR0176,viewer_0176,viewer0176@example.invalid,1981,female,JP,ja,2021-11-07,Basic,Fantasy,false,cancelled
-USR0177,viewer_0177,viewer0177@example.invalid,2007,prefer_not_to_say,BR,pt,2022-07-25,Standard,Comedy,false,active
-USR0178,viewer_0178,viewer0178@example.invalid,2000,female,CA,en,2024-12-19,Basic,Romance,false,paused
-USR0179,viewer_0179,viewer0179@example.invalid,1985,male,GB,en,2022-03-07,Premium,Animation,false,active
-USR0180,viewer_0180,viewer0180@example.invalid,2005,male,KR,ko,2025-04-24,Premium,Drama,true,paused
-USR0181,viewer_0181,viewer0181@example.invalid,1961,non_binary,AU,en,2021-01-15,Premium,Science Fiction,false,active
-USR0182,viewer_0182,viewer0182@example.invalid,1978,non_binary,FR,fr,2024-02-25,Basic,Documentary,true,active
-USR0183,viewer_0183,viewer0183@example.invalid,1994,non_binary,US,en,2025-03-15,Standard,Horror,false,paused
-USR0184,viewer_0184,viewer0184@example.invalid,1993,male,IN,hi,2024-12-26,Standard,Thriller,true,active
-USR0185,viewer_0185,viewer0185@example.invalid,1994,prefer_not_to_say,DE,de,2021-05-13,Standard,Action,false,active
-USR0186,viewer_0186,viewer0186@example.invalid,1965,prefer_not_to_say,JP,ja,2025-12-18,Premium,Fantasy,true,active
-USR0187,viewer_0187,viewer0187@example.invalid,1969,non_binary,BR,pt,2021-03-08,Premium,Comedy,false,active
-USR0188,viewer_0188,viewer0188@example.invalid,2007,non_binary,CA,en,2025-12-25,Basic,Romance,true,active
-USR0189,viewer_0189,viewer0189@example.invalid,1995,non_binary,GB,en,2025-06-16,Basic,Animation,false,active
-USR0190,viewer_0190,viewer0190@example.invalid,1961,prefer_not_to_say,KR,ko,2025-10-20,Basic,Drama,false,cancelled
-USR0191,viewer_0191,viewer0191@example.invalid,2001,non_binary,AU,en,2024-08-25,Basic,Science Fiction,true,active
-USR0192,viewer_0192,viewer0192@example.invalid,1978,non_binary,FR,fr,2025-11-26,Standard,Documentary,true,cancelled
-USR0193,viewer_0193,viewer0193@example.invalid,1987,prefer_not_to_say,US,en,2022-08-07,Basic,Horror,false,paused
-USR0194,viewer_0194,viewer0194@example.invalid,1980,non_binary,IN,hi,2025-02-15,Standard,Thriller,true,paused
-USR0195,viewer_0195,viewer0195@example.invalid,1983,female,DE,de,2025-05-14,Standard,Action,false,active
-USR0196,viewer_0196,viewer0196@example.invalid,1955,female,JP,ja,2025-10-29,Premium,Fantasy,true,active
-USR0197,viewer_0197,viewer0197@example.invalid,1971,prefer_not_to_say,BR,pt,2024-08-04,Standard,Comedy,false,cancelled
-USR0198,viewer_0198,viewer0198@example.invalid,1957,non_binary,CA,en,2021-05-17,Premium,Romance,false,paused
-USR0199,viewer_0199,viewer0199@example.invalid,1995,female,GB,en,2023-05-14,Standard,Animation,false,active
-USR0200,viewer_0200,viewer0200@example.invalid,2004,prefer_not_to_say,KR,ko,2025-05-03,Premium,Drama,true,cancelled
-USR0201,viewer_0201,viewer0201@example.invalid,1968,male,AU,en,2024-05-11,Premium,Science Fiction,true,active
-USR0202,viewer_0202,viewer0202@example.invalid,1986,female,FR,fr,2024-03-01,Standard,Documentary,false,paused
-USR0203,viewer_0203,viewer0203@example.invalid,1977,female,US,en,2021-09-24,Standard,Horror,false,active
-USR0204,viewer_0204,viewer0204@example.invalid,2002,female,IN,hi,2021-09-24,Basic,Thriller,true,active
-USR0205,viewer_0205,viewer0205@example.invalid,2004,prefer_not_to_say,DE,de,2021-03-20,Standard,Action,false,active
-USR0206,viewer_0206,viewer0206@example.invalid,1961,prefer_not_to_say,JP,ja,2024-03-21,Premium,Fantasy,false,active
-USR0207,viewer_0207,viewer0207@example.invalid,1965,prefer_not_to_say,BR,pt,2022-03-19,Standard,Comedy,true,active
-USR0208,viewer_0208,viewer0208@example.invalid,1986,prefer_not_to_say,CA,en,2025-11-22,Standard,Romance,false,active
-USR0209,viewer_0209,viewer0209@example.invalid,1969,male,GB,en,2025-08-11,Basic,Animation,true,cancelled
-USR0210,viewer_0210,viewer0210@example.invalid,1968,non_binary,KR,ko,2024-07-20,Premium,Drama,true,active
-USR0211,viewer_0211,viewer0211@example.invalid,1984,female,AU,en,2022-01-22,Basic,Science Fiction,false,active
-USR0212,viewer_0212,viewer0212@example.invalid,1975,non_binary,FR,fr,2024-03-09,Premium,Documentary,false,active
-USR0213,viewer_0213,viewer0213@example.invalid,1972,female,US,en,2023-10-19,Standard,Horror,false,active
-USR0214,viewer_0214,viewer0214@example.invalid,1957,non_binary,IN,hi,2021-05-03,Premium,Thriller,true,cancelled
-USR0215,viewer_0215,viewer0215@example.invalid,1978,male,DE,de,2024-08-07,Premium,Action,true,active
-USR0216,viewer_0216,viewer0216@example.invalid,1978,female,JP,ja,2022-07-28,Basic,Fantasy,false,cancelled
-USR0217,viewer_0217,viewer0217@example.invalid,1973,prefer_not_to_say,BR,pt,2022-12-18,Premium,Comedy,false,active
-USR0218,viewer_0218,viewer0218@example.invalid,2004,male,CA,en,2021-07-22,Premium,Romance,true,active
-USR0219,viewer_0219,viewer0219@example.invalid,1970,prefer_not_to_say,GB,en,2025-02-02,Basic,Animation,false,active
-USR0220,viewer_0220,viewer0220@example.invalid,1994,female,KR,ko,2021-08-18,Basic,Drama,false,active
-USR0221,viewer_0221,viewer0221@example.invalid,1993,female,AU,en,2026-01-09,Standard,Science Fiction,false,active
-USR0222,viewer_0222,viewer0222@example.invalid,1997,female,FR,fr,2024-10-26,Premium,Documentary,false,active
-USR0223,viewer_0223,viewer0223@example.invalid,2006,non_binary,US,en,2021-01-19,Standard,Horror,false,cancelled
-USR0224,viewer_0224,viewer0224@example.invalid,1967,non_binary,IN,hi,2025-08-30,Premium,Thriller,true,active
-USR0225,viewer_0225,viewer0225@example.invalid,1962,female,DE,de,2022-10-16,Basic,Action,true,active
-USR0226,viewer_0226,viewer0226@example.invalid,1986,female,JP,ja,2023-09-22,Standard,Fantasy,false,active
-USR0227,viewer_0227,viewer0227@example.invalid,1997,prefer_not_to_say,BR,pt,2022-06-13,Basic,Comedy,false,active
-USR0228,viewer_0228,viewer0228@example.invalid,1973,female,CA,en,2025-10-19,Basic,Romance,true,cancelled
-USR0229,viewer_0229,viewer0229@example.invalid,1958,non_binary,GB,en,2021-07-19,Premium,Animation,true,active
-USR0230,viewer_0230,viewer0230@example.invalid,1980,male,KR,ko,2024-05-14,Standard,Drama,true,active
-USR0231,viewer_0231,viewer0231@example.invalid,1993,female,AU,en,2024-11-26,Premium,Science Fiction,true,active
-USR0232,viewer_0232,viewer0232@example.invalid,1998,non_binary,FR,fr,2022-09-29,Basic,Documentary,true,cancelled
-USR0233,viewer_0233,viewer0233@example.invalid,1965,female,US,en,2023-02-21,Standard,Horror,false,active
-USR0234,viewer_0234,viewer0234@example.invalid,1957,male,IN,hi,2021-10-20,Premium,Thriller,false,paused
-USR0235,viewer_0235,viewer0235@example.invalid,1955,non_binary,DE,de,2021-04-01,Premium,Action,false,active
-USR0236,viewer_0236,viewer0236@example.invalid,1958,prefer_not_to_say,JP,ja,2021-01-08,Premium,Fantasy,false,active
-USR0237,viewer_0237,viewer0237@example.invalid,1981,prefer_not_to_say,BR,pt,2026-01-04,Basic,Comedy,false,paused
-USR0238,viewer_0238,viewer0238@example.invalid,1967,non_binary,CA,en,2021-06-11,Standard,Romance,false,active
-USR0239,viewer_0239,viewer0239@example.invalid,2001,male,GB,en,2023-10-15,Premium,Animation,true,cancelled
-USR0240,viewer_0240,viewer0240@example.invalid,1973,prefer_not_to_say,KR,ko,2025-02-01,Standard,Drama,true,active
-USR0241,viewer_0241,viewer0241@example.invalid,1997,non_binary,AU,en,2022-04-18,Basic,Science Fiction,false,cancelled
-USR0242,viewer_0242,viewer0242@example.invalid,2006,non_binary,FR,fr,2024-10-30,Standard,Documentary,true,active
-USR0243,viewer_0243,viewer0243@example.invalid,2006,prefer_not_to_say,US,en,2023-11-08,Basic,Horror,false,active
-USR0244,viewer_0244,viewer0244@example.invalid,1999,male,IN,hi,2023-08-19,Basic,Thriller,false,active
-USR0245,viewer_0245,viewer0245@example.invalid,1990,prefer_not_to_say,DE,de,2021-07-23,Premium,Action,false,active
-USR0246,viewer_0246,viewer0246@example.invalid,1975,non_binary,JP,ja,2022-01-05,Basic,Fantasy,false,active
-USR0247,viewer_0247,viewer0247@example.invalid,1971,non_binary,BR,pt,2021-05-28,Basic,Comedy,true,paused
-USR0248,viewer_0248,viewer0248@example.invalid,1957,prefer_not_to_say,CA,en,2025-04-17,Basic,Romance,false,cancelled
-USR0249,viewer_0249,viewer0249@example.invalid,1962,prefer_not_to_say,GB,en,2023-07-01,Premium,Animation,true,active
-USR0250,viewer_0250,viewer0250@example.invalid,1990,female,KR,ko,2025-12-19,Premium,Drama,false,paused
-USR0251,viewer_0251,viewer0251@example.invalid,1979,male,AU,en,2023-07-23,Basic,Science Fiction,false,active
-USR0252,viewer_0252,viewer0252@example.invalid,1981,non_binary,FR,fr,2025-10-21,Standard,Documentary,false,cancelled
-USR0253,viewer_0253,viewer0253@example.invalid,1999,male,US,en,2021-10-18,Basic,Horror,true,cancelled
-USR0254,viewer_0254,viewer0254@example.invalid,2005,prefer_not_to_say,IN,hi,2025-12-30,Basic,Thriller,false,active
-USR0255,viewer_0255,viewer0255@example.invalid,1964,non_binary,DE,de,2022-07-03,Premium,Action,true,cancelled
-USR0256,viewer_0256,viewer0256@example.invalid,1985,female,JP,ja,2022-07-05,Premium,Fantasy,false,cancelled
-USR0257,viewer_0257,viewer0257@example.invalid,1989,non_binary,BR,pt,2022-01-15,Standard,Comedy,false,active
-USR0258,viewer_0258,viewer0258@example.invalid,1990,non_binary,CA,en,2022-04-25,Standard,Romance,false,active
-USR0259,viewer_0259,viewer0259@example.invalid,1971,male,GB,en,2025-06-08,Premium,Animation,false,active
-USR0260,viewer_0260,viewer0260@example.invalid,1965,male,KR,ko,2021-12-17,Standard,Drama,false,paused
-USR0261,viewer_0261,viewer0261@example.invalid,1976,male,AU,en,2021-03-16,Standard,Science Fiction,false,active
-USR0262,viewer_0262,viewer0262@example.invalid,1981,female,FR,fr,2025-10-14,Premium,Documentary,false,active
-USR0263,viewer_0263,viewer0263@example.invalid,1985,prefer_not_to_say,US,en,2025-02-11,Standard,Horror,true,cancelled
-USR0264,viewer_0264,viewer0264@example.invalid,1979,prefer_not_to_say,IN,hi,2021-04-21,Premium,Thriller,false,paused
-USR0265,viewer_0265,viewer0265@example.invalid,2002,male,DE,de,2021-05-04,Standard,Action,true,paused
-USR0266,viewer_0266,viewer0266@example.invalid,1961,female,JP,ja,2021-06-01,Standard,Fantasy,false,paused
-USR0267,viewer_0267,viewer0267@example.invalid,1978,male,BR,pt,2022-04-07,Premium,Comedy,true,active
-USR0268,viewer_0268,viewer0268@example.invalid,1971,female,CA,en,2021-02-23,Premium,Romance,false,active
-USR0269,viewer_0269,viewer0269@example.invalid,1972,non_binary,GB,en,2025-02-14,Premium,Animation,false,cancelled
-USR0270,viewer_0270,viewer0270@example.invalid,1982,prefer_not_to_say,KR,ko,2025-10-28,Standard,Drama,true,active
-USR0271,viewer_0271,viewer0271@example.invalid,1985,prefer_not_to_say,AU,en,2022-08-05,Basic,Science Fiction,true,active
-USR0272,viewer_0272,viewer0272@example.invalid,1983,male,FR,fr,2024-02-02,Premium,Documentary,true,active
-USR0273,viewer_0273,viewer0273@example.invalid,1962,female,US,en,2023-01-04,Standard,Horror,true,active
-USR0274,viewer_0274,viewer0274@example.invalid,1979,female,IN,hi,2022-10-10,Basic,Thriller,false,paused
-USR0275,viewer_0275,viewer0275@example.invalid,2005,prefer_not_to_say,DE,de,2023-10-22,Standard,Action,false,active
-USR0276,viewer_0276,viewer0276@example.invalid,1981,prefer_not_to_say,JP,ja,2021-10-21,Premium,Fantasy,false,active
-USR0277,viewer_0277,viewer0277@example.invalid,1988,non_binary,BR,pt,2025-05-29,Premium,Comedy,false,paused
-USR0278,viewer_0278,viewer0278@example.invalid,1997,prefer_not_to_say,CA,en,2023-02-10,Standard,Romance,true,cancelled
-USR0279,viewer_0279,viewer0279@example.invalid,2001,prefer_not_to_say,GB,en,2022-05-31,Basic,Animation,false,paused
-USR0280,viewer_0280,viewer0280@example.invalid,2007,non_binary,KR,ko,2023-06-16,Basic,Drama,false,active
-USR0281,viewer_0281,viewer0281@example.invalid,1990,non_binary,AU,en,2021-05-24,Standard,Science Fiction,true,active
-USR0282,viewer_0282,viewer0282@example.invalid,1995,female,FR,fr,2025-12-20,Basic,Documentary,false,active
-USR0283,viewer_0283,viewer0283@example.invalid,1968,prefer_not_to_say,US,en,2025-07-10,Premium,Horror,true,cancelled
-USR0284,viewer_0284,viewer0284@example.invalid,1993,non_binary,IN,hi,2022-05-16,Basic,Thriller,true,cancelled
-USR0285,viewer_0285,viewer0285@example.invalid,1959,female,DE,de,2025-03-19,Standard,Action,false,active
-USR0286,viewer_0286,viewer0286@example.invalid,2001,female,JP,ja,2022-05-11,Premium,Fantasy,false,paused
-USR0287,viewer_0287,viewer0287@example.invalid,1997,non_binary,BR,pt,2021-08-20,Standard,Comedy,true,active
-USR0288,viewer_0288,viewer0288@example.invalid,1994,prefer_not_to_say,CA,en,2024-08-21,Basic,Romance,true,active
-USR0289,viewer_0289,viewer0289@example.invalid,1965,prefer_not_to_say,GB,en,2023-07-09,Basic,Animation,true,cancelled
-USR0290,viewer_0290,viewer0290@example.invalid,1964,prefer_not_to_say,KR,ko,2025-05-09,Standard,Drama,true,paused
-USR0291,viewer_0291,viewer0291@example.invalid,1997,female,AU,en,2021-06-03,Basic,Science Fiction,false,active
-USR0292,viewer_0292,viewer0292@example.invalid,2007,male,FR,fr,2021-04-22,Standard,Documentary,true,active
-USR0293,viewer_0293,viewer0293@example.invalid,1986,non_binary,US,en,2022-05-20,Standard,Horror,false,active
-USR0294,viewer_0294,viewer0294@example.invalid,1988,female,IN,hi,2023-04-23,Basic,Thriller,false,active
-USR0295,viewer_0295,viewer0295@example.invalid,2004,non_binary,DE,de,2023-05-09,Basic,Action,false,paused
-USR0296,viewer_0296,viewer0296@example.invalid,1995,female,JP,ja,2022-01-07,Premium,Fantasy,false,active
-USR0297,viewer_0297,viewer0297@example.invalid,1961,male,BR,pt,2025-10-16,Basic,Comedy,true,paused
-USR0298,viewer_0298,viewer0298@example.invalid,1977,male,CA,en,2025-08-22,Standard,Romance,false,cancelled
-USR0299,viewer_0299,viewer0299@example.invalid,2002,female,GB,en,2024-06-16,Standard,Animation,true,active
-USR0300,viewer_0300,viewer0300@example.invalid,1996,prefer_not_to_say,KR,ko,2022-03-06,Basic,Drama,true,cancelled
+user_id,display_name,birth_year,gender,region,preferred_language,signup_date,subscription_plan,preferred_genre,preferred_device,watch_time_preference,household_type,account_status
+USR0001,엔딩크레딧까지,1991,female,서울,ko,2019-11-08,Premium,Drama,smart_tv,weekday_night,single,active
+USR0002,새벽두시관객,1987,male,부산,ko,2020-02-14,Standard,Thriller,mobile,late_night,couple,active
+USR0003,팝콘은반반,1998,non_binary,경기,ko,2020-07-03,Basic,Comedy,tablet,weekend_afternoon,shared,active
+USR0004,비오는날영화,1979,female,대전,ko,2019-09-21,Standard,Romance,smart_tv,weekday_evening,family,active
+USR0005,주말의감독판,1984,male,인천,ko,2020-01-05,Premium,Science Fiction,smart_tv,weekend_night,family,active
+USR0006,고래와자막,1995,female,제주,ko,2020-06-18,Standard,Animation,tablet,weekend_morning,single,active
+USR0007,장면수집가,1990,male,광주,ko,2019-12-27,Premium,Documentary,web,weekday_night,single,active
+USR0008,퇴근후한편,1988,female,서울,ko,2020-03-12,Standard,Drama,mobile,commute,couple,active
+USR0009,반전은조용히,1996,male,대구,ko,2020-08-29,Basic,Thriller,mobile,late_night,single,active
+USR0010,달빛스크린,1974,female,강원,ko,2019-10-16,Premium,Fantasy,smart_tv,weekend_night,family,active
+USR0011,자막읽는고양이,2001,female,경기,ko,2020-09-04,Basic,Romance,tablet,late_night,shared,active
+USR0012,오늘도재생중,1982,male,충북,ko,2019-08-23,Standard,Action,smart_tv,weekday_evening,family,active
+USR0013,필름냄새,1969,male,부산,ko,2019-11-30,Premium,Documentary,web,weekend_afternoon,couple,active
+USR0014,소파일열,1993,female,서울,ko,2020-04-17,Standard,Comedy,smart_tv,weekday_night,single,active
+USR0015,한밤의예고편,1989,prefer_not_to_say,울산,ko,2020-05-09,Premium,Horror,game_console,late_night,single,active
+USR0016,사운드먼저,1997,male,경기,ko,2020-10-02,Basic,Science Fiction,headset,late_night,shared,active
+USR0017,오프닝건너뛰지마,1985,female,서울,ko,2019-07-11,Standard,Drama,smart_tv,weekday_evening,family,active
+USR0018,극장뒷자리,1977,male,전북,ko,2019-12-06,Premium,Action,smart_tv,weekend_night,couple,active
+USR0019,여름밤필름,1999,female,전남,ko,2020-08-15,Basic,Romance,mobile,late_night,single,active
+USR0020,한줄평보관함,1992,male,세종,ko,2020-03-28,Standard,Thriller,web,weekday_night,single,active
+USR0021,느린재생,1965,female,경남,ko,2019-06-14,Standard,Drama,smart_tv,weekend_afternoon,family,active
+USR0022,장르편식없음,1986,male,충남,ko,2020-01-24,Premium,Fantasy,smart_tv,weekend_night,couple,active
+USR0023,쿠키영상대기중,2000,female,서울,ko,2020-11-06,Basic,Action,mobile,late_night,shared,active
+USR0024,블루레이없는집,1994,male,부산,ko,2020-06-05,Standard,Science Fiction,game_console,weekend_night,single,active
+USR0025,낮잠후영화,1980,female,대구,ko,2019-09-08,Standard,Comedy,tablet,weekend_afternoon,family,active
+USR0026,크레딧음악,1972,male,서울,ko,2019-10-31,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0027,포스터모으는중,1996,female,인천,ko,2020-07-19,Basic,Horror,mobile,late_night,single,active
+USR0028,두번보는사람,1983,male,광주,ko,2019-12-14,Premium,Thriller,smart_tv,weekend_night,family,active
+USR0029,한강뷰어,1990,female,서울,ko,2020-02-29,Standard,Romance,tablet,weekday_night,couple,active
+USR0030,무음모드관객,1998,non_binary,경기,ko,2020-10-23,Basic,Documentary,mobile,commute,shared,active
+USR0031,토요일첫회,1976,male,대전,ko,2019-05-18,Premium,Action,smart_tv,weekend_morning,family,active
+USR0032,눈오는날재생,1989,female,강원,ko,2019-12-21,Standard,Fantasy,smart_tv,weekend_night,single,active
+USR0033,대사암기중,1995,male,서울,ko,2020-04-11,Standard,Comedy,web,weekday_night,single,active
+USR0034,배경음수집,1981,female,부산,ko,2019-08-02,Premium,Horror,headset,late_night,couple,active
+USR0035,작은화면큰감동,2002,female,충북,ko,2020-11-20,Basic,Animation,mobile,commute,shared,active
+USR0036,리모컨주인,1968,male,경기,ko,2019-07-26,Premium,Drama,smart_tv,weekday_evening,family,active
+USR0037,비밀상영회,1991,female,서울,ko,2020-05-29,Standard,Thriller,tablet,late_night,single,active
+USR0038,영화보는수달,1997,male,제주,ko,2020-09-18,Basic,Documentary,mobile,weekend_afternoon,single,active
+USR0039,주인공보다조연,1987,female,대구,ko,2019-11-15,Standard,Drama,smart_tv,weekday_night,couple,active
+USR0040,월요일은코미디,1993,male,울산,ko,2020-03-06,Standard,Comedy,web,weekday_evening,single,active
+USR0041,화면비율지킴이,1975,male,서울,ko,2019-04-12,Premium,Science Fiction,projector,weekend_night,family,active
+USR0042,봄밤한편,1999,female,전북,ko,2020-10-09,Basic,Romance,mobile,late_night,shared,active
+USR0043,영화제표없음,1984,female,부산,ko,2019-09-27,Premium,Documentary,web,weekend_afternoon,couple,active
+USR0044,괴물도친구,2003,male,경기,ko,2020-12-04,Basic,Animation,tablet,weekend_morning,family,active
+USR0045,액션은큰화면,1988,male,인천,ko,2020-01-31,Premium,Action,smart_tv,weekend_night,single,active
+USR0046,조용한반전,1994,female,서울,ko,2020-06-26,Standard,Thriller,headset,late_night,single,active
+USR0047,종이티켓추억,1963,female,경남,ko,2019-03-15,Standard,Drama,smart_tv,weekend_afternoon,family,active
+USR0048,저녁여섯시관객,1978,male,충남,ko,2019-08-30,Premium,Fantasy,smart_tv,weekday_evening,couple,active
+USR0049,감독이름부터,1990,female,서울,ko,2020-02-07,Standard,Documentary,web,weekday_night,single,active
+USR0050,예고편금지,1996,male,광주,ko,2020-07-31,Basic,Horror,mobile,late_night,shared,active
+USR0051,영화와귤,1985,female,제주,ko,2019-12-24,Premium,Drama,smart_tv,weekend_night,family,active
+USR0052,대사보다표정,1992,male,서울,ko,2020-04-24,Standard,Romance,tablet,weekday_night,couple,active
+USR0053,한편더볼까,2000,female,경기,ko,2020-11-13,Basic,Comedy,mobile,late_night,shared,active
+USR0054,클래식한밤,1970,male,대전,ko,2019-05-31,Premium,Action,projector,weekend_night,family,active
+USR0055,도시의관객,1986,female,인천,ko,2020-01-17,Standard,Thriller,smart_tv,weekday_evening,single,active
+USR0056,초록자막,1998,non_binary,서울,ko,2020-09-11,Basic,Fantasy,tablet,late_night,shared,active
+USR0057,필름앤커피,1981,female,부산,ko,2019-07-05,Premium,Documentary,web,weekend_morning,couple,active
+USR0058,웃음참기실패,1993,male,대구,ko,2020-05-22,Standard,Comedy,smart_tv,weekday_night,single,active
+USR0059,공포는낮에,1989,female,경기,ko,2020-03-20,Standard,Horror,tablet,weekend_afternoon,family,active
+USR0060,별빛관람차,2001,male,강원,ko,2020-10-30,Basic,Animation,mobile,weekend_night,shared,active
+USR0061,심야라디오영화,1977,female,서울,ko,2019-06-28,Premium,Romance,smart_tv,late_night,couple,active
+USR0062,결말은내일,1995,male,울산,ko,2020-08-07,Basic,Science Fiction,game_console,late_night,single,active
+USR0063,화면속산책,1983,female,전남,ko,2019-11-22,Standard,Drama,smart_tv,weekend_afternoon,family,active
+USR0064,장르여행자,1991,male,서울,ko,2020-02-21,Premium,Fantasy,web,weekday_night,single,active
+USR0065,재생목록정리중,1999,female,세종,ko,2020-09-25,Basic,Comedy,mobile,commute,shared,active
+USR0066,무비노트한권,1973,male,전북,ko,2019-04-26,Standard,Documentary,tablet,weekend_morning,couple,active
+USR0067,주말소파지킴이,1988,female,경기,ko,2020-01-10,Premium,Drama,smart_tv,weekend_night,family,active
+USR0068,소리큰장면,1994,male,부산,ko,2020-06-12,Standard,Action,headset,late_night,single,active
+USR0069,비오는창가,1982,female,광주,ko,2019-09-13,Standard,Romance,tablet,weekday_evening,couple,active
+USR0070,스포일러차단,2002,male,서울,ko,2020-12-11,Basic,Thriller,mobile,late_night,shared,active
+USR0071,한밤의토끼,1997,female,대전,ko,2020-07-17,Basic,Animation,tablet,weekend_night,single,active
+USR0072,검은화면오초,1985,male,인천,ko,2019-12-13,Premium,Horror,smart_tv,late_night,couple,active
+USR0073,장면전환중,1990,female,서울,ko,2020-03-27,Standard,Drama,web,weekday_night,single,active
+USR0074,구름위극장,1967,male,강원,ko,2019-05-03,Premium,Fantasy,smart_tv,weekend_afternoon,family,active
+USR0075,웃음소리주의,1996,female,대구,ko,2020-08-21,Basic,Comedy,mobile,commute,shared,active
+USR0076,보고또보는중,1979,male,경남,ko,2019-08-16,Standard,Action,smart_tv,weekend_night,family,active
+USR0077,작은극장단골,1987,female,부산,ko,2019-11-01,Premium,Documentary,web,weekend_morning,couple,active
+USR0078,대사없는밤,1993,non_binary,서울,ko,2020-05-15,Standard,Science Fiction,headset,late_night,single,active
+USR0079,빗소리와자막,2000,female,제주,ko,2020-10-16,Basic,Romance,tablet,late_night,shared,active
+USR0080,월간무비로그,1984,male,경기,ko,2020-01-03,Premium,Thriller,smart_tv,weekday_evening,family,active
+USR0081,저예산애호가,1991,female,광주,ko,2020-04-10,Standard,Drama,web,weekday_night,single,active
+USR0082,빛과그림자사이,1971,male,서울,ko,2019-03-29,Premium,Horror,projector,weekend_night,couple,active
+USR0083,아침영화한편,1989,female,충북,ko,2019-12-20,Standard,Animation,tablet,weekend_morning,family,active
+USR0084,빠른전개좋아,1998,male,울산,ko,2020-09-03,Basic,Action,mobile,late_night,single,active
+USR0085,천천히몰입,1980,female,전남,ko,2019-07-19,Premium,Documentary,smart_tv,weekend_afternoon,couple,active
+USR0086,설정집독자,1995,male,대전,ko,2020-06-19,Standard,Science Fiction,game_console,weekend_night,single,active
+USR0087,감정선추적,1986,female,서울,ko,2020-02-28,Standard,Romance,smart_tv,weekday_evening,family,active
+USR0088,반전두번,1992,male,경기,ko,2020-05-08,Premium,Thriller,web,late_night,single,active
+USR0089,금요일코미디,2001,female,부산,ko,2020-11-27,Basic,Comedy,mobile,late_night,shared,active
+USR0090,여운보관소,1976,male,전북,ko,2019-06-07,Premium,Drama,smart_tv,weekend_night,couple,active
+USR0091,포스터속여행,1994,female,인천,ko,2020-07-24,Basic,Fantasy,tablet,weekend_afternoon,single,active
+USR0092,공포영화초보,1988,male,서울,ko,2019-10-04,Standard,Horror,smart_tv,weekend_night,family,active
+USR0093,고전도신작도,1960,female,대구,ko,2019-02-15,Premium,Documentary,projector,weekend_morning,couple,active
+USR0094,액션동선연구,1983,male,경기,ko,2019-09-06,Premium,Action,smart_tv,weekday_night,single,active
+USR0095,오늘의명대사,1997,female,서울,ko,2020-08-14,Basic,Romance,mobile,commute,shared,active
+USR0096,미래도시입주민,1990,male,세종,ko,2020-03-13,Standard,Science Fiction,game_console,late_night,couple,active
+USR0097,캐릭터우선,1985,female,부산,ko,2019-11-29,Premium,Animation,tablet,weekend_afternoon,family,active
+USR0098,엔딩곡검색중,1999,male,대전,ko,2020-10-09,Basic,Comedy,mobile,late_night,single,active
+USR0099,스크린너머,1978,female,강원,ko,2019-05-24,Standard,Drama,smart_tv,weekday_evening,couple,active
+USR0100,비밀문을열다,1993,male,서울,ko,2020-04-03,Premium,Thriller,web,late_night,single,active
+USR0101,해피엔딩협회,1987,female,경기,ko,2020-01-31,Standard,Romance,smart_tv,weekend_night,family,active
+USR0102,다큐는끝까지,1975,male,광주,ko,2019-07-12,Premium,Documentary,web,weekend_morning,couple,active
+USR0103,비오는극장앞,2000,female,부산,ko,2020-11-06,Basic,Drama,mobile,late_night,shared,active
+USR0104,한밤의우주선,1992,male,대구,ko,2020-05-29,Standard,Science Fiction,game_console,late_night,single,active
+USR0105,초록괴물친구,1996,female,제주,ko,2020-08-28,Basic,Animation,tablet,weekend_afternoon,single,active
+USR0106,추격전은두번,1981,male,울산,ko,2019-10-18,Premium,Action,smart_tv,weekend_night,family,active
+USR0107,생활밀착관객,1989,female,서울,ko,2020-03-06,Standard,Comedy,smart_tv,weekday_evening,couple,active
+USR0108,소름은조용히,1995,male,인천,ko,2020-07-10,Basic,Horror,headset,late_night,single,active
+USR0109,필름속골목,1966,female,전남,ko,2019-04-19,Premium,Drama,smart_tv,weekend_afternoon,family,active
+USR0110,배우표정노트,1984,male,서울,ko,2019-12-27,Standard,Romance,web,weekday_night,couple,active
+USR0111,토론은엔딩후,1991,female,대전,ko,2020-04-24,Premium,Thriller,tablet,late_night,single,active
+USR0112,애니와아침밥,2003,male,경기,ko,2020-12-18,Basic,Animation,mobile,weekend_morning,family,active
+USR0113,소파속우주,1998,female,서울,ko,2020-09-11,Basic,Science Fiction,tablet,late_night,shared,active
+USR0114,현장음좋아,1973,male,부산,ko,2019-06-21,Premium,Documentary,headset,weekend_night,couple,active
+USR0115,가벼운월요일,1988,female,충남,ko,2020-02-14,Standard,Comedy,smart_tv,weekday_evening,family,active
+USR0116,칼싸움보다동선,1982,male,전북,ko,2019-09-20,Premium,Action,smart_tv,weekend_night,single,active
+USR0117,빨간커튼,1994,female,서울,ko,2020-06-05,Standard,Horror,tablet,late_night,single,active
+USR0118,저녁바람영화,1986,male,강원,ko,2019-11-08,Standard,Romance,smart_tv,weekday_evening,couple,active
+USR0119,장면속직업인,1979,female,경기,ko,2019-08-02,Premium,Drama,web,weekend_afternoon,family,active
+USR0120,오늘은판타지,2001,male,대구,ko,2020-10-23,Basic,Fantasy,mobile,late_night,shared,active
+USR0121,쿠션두개관객,1990,female,서울,ko,2020-01-17,Premium,Comedy,smart_tv,weekday_night,single,active
+USR0122,자막싱크민감,1983,male,부산,ko,2019-07-26,Standard,Thriller,web,late_night,couple,active
+USR0123,긴호흡환영,1968,female,광주,ko,2019-03-08,Premium,Documentary,smart_tv,weekend_morning,family,active
+USR0124,로봇도감정있어,1997,male,세종,ko,2020-08-21,Basic,Science Fiction,game_console,weekend_night,single,active
+USR0125,골목길엔딩,1985,female,인천,ko,2019-12-06,Standard,Drama,smart_tv,weekday_evening,couple,active
+USR0126,오후네시멜로,1992,male,서울,ko,2020-04-17,Standard,Romance,tablet,weekday_night,single,active
+USR0127,공포는이어폰,2000,female,경기,ko,2020-11-13,Basic,Horror,headset,late_night,shared,active
+USR0128,모험은거실에서,1977,male,경남,ko,2019-05-10,Premium,Action,smart_tv,weekend_night,family,active
+USR0129,주말다큐클럽,1988,female,제주,ko,2020-02-07,Standard,Documentary,web,weekend_afternoon,couple,active
+USR0130,웃긴장면저장,1995,male,대전,ko,2020-07-03,Basic,Comedy,mobile,commute,single,active
+USR0131,겨울밤재생,1974,female,강원,ko,2019-09-27,Premium,Fantasy,smart_tv,weekend_night,family,active
+USR0132,미스터리서랍,1991,male,서울,ko,2020-03-20,Standard,Thriller,web,late_night,single,active
+USR0133,영화속식탁,1984,female,전북,ko,2019-11-15,Standard,Drama,smart_tv,weekday_evening,couple,active
+USR0134,파도소리관객,1998,male,부산,ko,2020-09-04,Basic,Romance,mobile,late_night,shared,active
+USR0135,색연필열두색,2002,female,경기,ko,2020-12-24,Basic,Animation,tablet,weekend_morning,family,active
+USR0136,폭발보다긴장,1980,male,울산,ko,2019-08-30,Premium,Action,smart_tv,weekend_night,single,active
+USR0137,도시괴담수집,1993,female,서울,ko,2020-05-01,Standard,Horror,headset,late_night,single,active
+USR0138,별과편의점,1996,male,대구,ko,2020-08-14,Basic,Science Fiction,game_console,late_night,shared,active
+USR0139,작은목소리들,1972,female,전남,ko,2019-04-05,Premium,Documentary,web,weekend_afternoon,couple,active
+USR0140,로맨스는천천히,1987,male,서울,ko,2020-01-24,Standard,Romance,smart_tv,weekday_evening,family,active
+USR0141,첫장면집중,1990,female,경기,ko,2020-03-13,Premium,Drama,tablet,weekday_night,single,active
+USR0142,코미디한스푼,1985,male,부산,ko,2019-12-13,Standard,Comedy,smart_tv,weekend_night,couple,active
+USR0143,달빛과도깨비,1999,female,광주,ko,2020-10-30,Basic,Fantasy,mobile,late_night,shared,active
+USR0144,기록영화노트,1964,male,충북,ko,2019-02-22,Premium,Documentary,web,weekend_morning,family,active
+USR0145,액션편집점,1989,female,서울,ko,2020-06-12,Standard,Action,smart_tv,late_night,single,active
+USR0146,미래윤리관객,1994,male,대전,ko,2020-07-31,Standard,Science Fiction,tablet,weekday_night,single,active
+USR0147,호러는낮잠후,1982,female,인천,ko,2019-10-11,Premium,Horror,smart_tv,weekend_afternoon,couple,active
+USR0148,엔딩후산책,1978,male,강원,ko,2019-07-05,Standard,Drama,smart_tv,weekday_evening,family,active
+USR0149,토요일의멜로,1997,female,서울,ko,2020-09-18,Basic,Romance,mobile,late_night,shared,active
+USR0150,웃음버튼고장,2001,male,경기,ko,2020-11-27,Basic,Comedy,game_console,weekend_night,single,active
+USR0151,애니메이션식탁,1986,female,부산,ko,2019-11-22,Premium,Animation,tablet,weekend_morning,family,active
+USR0152,단서메모장,1992,male,서울,ko,2020-04-03,Standard,Thriller,web,late_night,single,active
+USR0153,한옥판타지,1971,female,전북,ko,2019-05-17,Premium,Fantasy,smart_tv,weekend_afternoon,couple,active
+USR0154,카메라뒤사람,1988,male,제주,ko,2020-01-10,Standard,Documentary,web,weekday_night,single,active
+USR0155,거실액션팀,1983,female,울산,ko,2019-09-06,Premium,Action,smart_tv,weekend_night,family,active
+USR0156,인공지능친구,1998,male,세종,ko,2020-10-02,Basic,Science Fiction,mobile,late_night,shared,active
+USR0157,비명은작게,1995,female,대구,ko,2020-08-07,Standard,Horror,headset,late_night,single,active
+USR0158,인물동선관찰,1976,male,서울,ko,2019-06-28,Premium,Drama,projector,weekend_night,couple,active
+USR0159,여름비로맨스,1990,female,광주,ko,2020-02-21,Standard,Romance,tablet,weekday_evening,single,active
+USR0160,회사코미디부,1984,male,경기,ko,2019-12-20,Standard,Comedy,smart_tv,weekday_night,family,active
+USR0161,동화속여행자,2003,female,강원,ko,2020-12-11,Basic,Animation,tablet,weekend_morning,shared,active
+USR0162,반전기록원,1987,male,서울,ko,2020-03-27,Premium,Thriller,web,late_night,single,active
+USR0163,달빛병수집가,1993,female,제주,ko,2020-06-19,Standard,Fantasy,mobile,late_night,single,active
+USR0164,노동다큐관객,1969,male,경남,ko,2019-03-22,Premium,Documentary,smart_tv,weekend_afternoon,family,active
+USR0165,추격선탑승자,1996,female,부산,ko,2020-09-25,Basic,Action,game_console,weekend_night,shared,active
+USR0166,근미래세입자,1981,male,인천,ko,2019-10-25,Standard,Science Fiction,smart_tv,weekday_night,couple,active
+USR0167,빈교실관객,1999,female,대전,ko,2020-11-20,Basic,Horror,mobile,late_night,single,active
+USR0168,골목휴먼극,1979,male,서울,ko,2019-08-09,Premium,Drama,smart_tv,weekend_afternoon,family,active
+USR0169,첫눈기다림,1989,female,강원,ko,2019-12-06,Standard,Romance,tablet,weekday_evening,couple,active
+USR0170,평일엔코미디,1994,male,대구,ko,2020-07-10,Basic,Comedy,mobile,commute,single,active
+USR0171,우주우편단골,1985,female,서울,ko,2020-01-31,Premium,Science Fiction,smart_tv,weekend_night,family,active
+USR0172,도깨비시장손님,1997,male,경북,ko,2020-09-11,Basic,Fantasy,tablet,late_night,shared,active
+USR0173,생태다큐산책,1973,female,전남,ko,2019-04-12,Standard,Documentary,web,weekend_morning,couple,active
+USR0174,산악액션관객,1988,male,충남,ko,2019-11-29,Premium,Action,smart_tv,weekend_night,single,active
+USR0175,옷장괴물친구,2000,female,경기,ko,2020-10-16,Basic,Animation,mobile,weekend_afternoon,shared,active
+USR0176,문뒤를조심,1992,male,서울,ko,2020-05-22,Standard,Horror,headset,late_night,single,active
+USR0177,이웃의장면,1966,female,부산,ko,2019-05-03,Premium,Drama,smart_tv,weekday_evening,family,active
+USR0178,편지속멜로,1983,male,전북,ko,2019-09-13,Standard,Romance,tablet,weekend_night,couple,active
+USR0179,반상회코미디,1995,female,서울,ko,2020-08-28,Basic,Comedy,mobile,late_night,single,active
+USR0180,시계수리관객,1980,male,세종,ko,2019-12-27,Premium,Science Fiction,smart_tv,weekday_night,family,active
+USR0181,마법재고확인,1998,female,대전,ko,2020-10-09,Basic,Fantasy,tablet,late_night,shared,active
+USR0182,현장노동기록,1975,male,울산,ko,2019-06-14,Premium,Documentary,web,weekend_afternoon,couple,active
+USR0183,역사액션좋아,1986,female,서울,ko,2020-02-07,Standard,Action,smart_tv,weekend_night,family,active
+USR0184,소리없는공포,1991,male,광주,ko,2020-04-24,Standard,Horror,headset,late_night,single,active
+USR0185,연필바다관객,2002,female,경기,ko,2020-12-04,Basic,Animation,tablet,weekend_morning,shared,active
+USR0186,느린드라마,1977,male,경남,ko,2019-07-19,Premium,Drama,smart_tv,weekend_afternoon,family,active
+USR0187,대사사이로맨스,1989,female,서울,ko,2020-03-06,Standard,Romance,web,weekday_night,couple,active
+USR0188,탕비실탐정,1996,male,대구,ko,2020-09-04,Basic,Comedy,mobile,late_night,single,active
+USR0189,가상도시주민,1984,female,인천,ko,2019-11-15,Premium,Science Fiction,game_console,weekend_night,family,active
+USR0190,밤을사는사람,1993,male,부산,ko,2020-06-26,Standard,Fantasy,smart_tv,late_night,single,active
+USR0191,카메라윤리노트,1972,female,제주,ko,2019-04-26,Premium,Documentary,web,weekend_morning,couple,active
+USR0192,열차액션좌석,1988,male,대전,ko,2020-01-17,Standard,Action,smart_tv,weekend_night,family,active
+USR0193,새벽배송금지,1999,female,경기,ko,2020-11-13,Basic,Horror,mobile,late_night,shared,active
+USR0194,구름우체부,2001,male,강원,ko,2020-12-18,Basic,Animation,tablet,weekend_morning,family,active
+USR0195,생활소품수집,1981,female,서울,ko,2019-09-27,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0196,한강멜로클럽,1994,male,서울,ko,2020-07-24,Standard,Romance,mobile,late_night,single,active
+USR0197,회사일은웃음,1987,female,경기,ko,2020-02-14,Standard,Comedy,smart_tv,weekday_night,family,active
+USR0198,달기지편의점,1990,male,세종,ko,2020-04-10,Premium,Science Fiction,game_console,weekend_night,single,active
+USR0199,종이배여행,1997,female,전남,ko,2020-09-18,Basic,Fantasy,tablet,late_night,shared,active
+USR0200,마지막상영회,1970,male,부산,ko,2019-03-15,Premium,Horror,projector,weekend_night,couple,active
+USR0201,시장다큐단골,1985,female,대구,ko,2019-12-13,Standard,Documentary,web,weekend_morning,family,active
+USR0202,크레인액션,1992,male,울산,ko,2020-05-29,Standard,Action,smart_tv,late_night,single,active
+USR0203,애니와우유,2004,female,경기,ko,2020-12-25,Basic,Animation,tablet,weekend_morning,family,active
+USR0204,주머니속지도,1980,male,서울,ko,2019-08-23,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0205,겨울바다멜로,1995,female,강원,ko,2020-08-07,Basic,Romance,mobile,late_night,single,active
+USR0206,외계인치킨,1998,male,경기,ko,2020-10-02,Basic,Comedy,game_console,weekend_night,shared,active
+USR0207,기억백업중,1986,female,서울,ko,2020-01-10,Premium,Science Fiction,web,weekday_night,single,active
+USR0208,산신령민원인,1978,male,충북,ko,2019-06-21,Standard,Fantasy,smart_tv,weekend_afternoon,family,active
+USR0209,바다기록자,1991,female,제주,ko,2020-04-17,Premium,Documentary,web,weekend_morning,couple,active
+USR0210,야간순찰팬,1984,male,인천,ko,2019-11-08,Standard,Action,smart_tv,weekend_night,single,active
+USR0211,거울보지마,1996,female,서울,ko,2020-09-25,Basic,Horror,headset,late_night,shared,active
+USR0212,별정비사,2000,male,대전,ko,2020-11-27,Basic,Animation,tablet,weekend_afternoon,single,active
+USR0213,옥상텃밭관객,1974,female,경남,ko,2019-04-05,Premium,Drama,smart_tv,weekday_evening,family,active
+USR0214,플레이리스트2007,1989,male,부산,ko,2020-02-28,Standard,Romance,web,late_night,couple,active
+USR0215,칼퇴코미디,1993,female,서울,ko,2020-06-12,Standard,Comedy,mobile,commute,single,active
+USR0216,한강수위제로,1982,male,경기,ko,2019-09-20,Premium,Science Fiction,smart_tv,weekend_night,family,active
+USR0217,바람보관소,1997,female,제주,ko,2020-10-30,Basic,Fantasy,tablet,late_night,shared,active
+USR0218,간판글씨관찰,1965,male,대구,ko,2019-02-08,Premium,Documentary,web,weekend_morning,couple,active
+USR0219,방패연액션,1988,female,경기,ko,2020-01-31,Standard,Action,smart_tv,weekend_night,family,active
+USR0220,복도끝은싫어,1994,male,서울,ko,2020-07-17,Basic,Horror,mobile,late_night,single,active
+USR0221,달팽이호텔손님,2002,female,강원,ko,2020-12-11,Basic,Animation,tablet,weekend_morning,shared,active
+USR0222,구두수선장면,1981,male,광주,ko,2019-08-16,Premium,Drama,smart_tv,weekend_afternoon,couple,active
+USR0223,봄밤번역가,1990,female,서울,ko,2020-03-27,Standard,Romance,web,weekday_night,single,active
+USR0224,임시반장회원,1985,male,경기,ko,2019-12-20,Standard,Comedy,smart_tv,weekday_evening,family,active
+USR0225,감정대여중,1999,female,대전,ko,2020-11-06,Basic,Science Fiction,mobile,late_night,shared,active
+USR0226,여우비우체국,1976,male,경북,ko,2019-05-24,Premium,Fantasy,smart_tv,weekend_night,couple,active
+USR0227,교대근무관객,1987,female,울산,ko,2020-02-21,Standard,Documentary,web,weekend_afternoon,family,active
+USR0228,북항추격중,1992,male,부산,ko,2020-05-15,Premium,Action,smart_tv,late_night,single,active
+USR0229,흰운동화주의,1995,female,서울,ko,2020-08-14,Basic,Horror,headset,late_night,single,active
+USR0230,종이컵탐험대,2003,male,경기,ko,2020-12-24,Basic,Animation,tablet,weekend_morning,family,active
+USR0231,소양강안개,1979,female,강원,ko,2019-07-12,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0232,두번째크레딧,1988,male,서울,ko,2020-01-24,Standard,Romance,web,weekend_night,single,active
+USR0233,반려식물면접,1996,female,세종,ko,2020-09-03,Basic,Comedy,mobile,commute,shared,active
+USR0234,복제인휴가중,1984,male,인천,ko,2019-11-29,Premium,Science Fiction,game_console,weekend_night,family,active
+USR0235,별을줍는밤,1998,female,서울,ko,2020-10-23,Basic,Fantasy,tablet,late_night,single,active
+USR0236,씨앗백년,1967,male,전북,ko,2019-03-29,Premium,Documentary,web,weekend_morning,couple,active
+USR0237,태권도장응원단,1989,female,경기,ko,2020-04-03,Standard,Action,smart_tv,weekend_afternoon,family,active
+USR0238,파도소리반지하,1993,male,서울,ko,2020-06-26,Standard,Horror,headset,late_night,single,active
+USR0239,북극여우친구,2001,female,부산,ko,2020-11-20,Basic,Animation,tablet,weekend_morning,shared,active
+USR0240,항구두번째이름,1977,male,울산,ko,2019-06-07,Premium,Drama,smart_tv,weekday_evening,family,active
+USR0241,빈자리예약자,1991,female,광주,ko,2020-03-13,Standard,Romance,web,weekday_night,couple,active
+USR0242,택배사진웃음,1997,male,경기,ko,2020-09-11,Basic,Comedy,mobile,commute,single,active
+USR0243,오류코드가족,1983,female,서울,ko,2019-10-04,Premium,Science Fiction,smart_tv,weekend_night,family,active
+USR0244,시간굽는빵집,1995,male,대구,ko,2020-07-31,Standard,Fantasy,tablet,late_night,single,active
+USR0245,도시숨구멍,1972,female,대전,ko,2019-04-19,Premium,Documentary,web,weekend_afternoon,couple,active
+USR0246,드론레이스관객,1988,male,서울,ko,2020-02-07,Standard,Action,game_console,weekend_night,single,active
+USR0247,새벽기도차단,1999,female,경기,ko,2020-10-16,Basic,Horror,mobile,late_night,shared,active
+USR0248,모래성우편,2002,male,전남,ko,2020-12-04,Basic,Animation,tablet,weekend_morning,family,active
+USR0249,냉장고의계절,1980,female,전북,ko,2019-08-30,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0250,자막없는계절,1994,male,서울,ko,2020-06-05,Standard,Romance,web,late_night,single,active
+USR0251,노래방할머니팬,1986,female,부산,ko,2019-12-13,Standard,Comedy,smart_tv,weekend_afternoon,family,active
+USR0252,알고리즘장례식,1992,male,세종,ko,2020-05-29,Premium,Science Fiction,tablet,weekday_night,single,active
+USR0253,목소리수집가,1975,female,인천,ko,2019-05-17,Premium,Fantasy,smart_tv,weekend_night,couple,active
+USR0254,새벽콜센터,1989,male,서울,ko,2020-03-20,Standard,Documentary,web,late_night,single,active
+USR0255,철의강건너편,1984,female,울산,ko,2019-11-01,Premium,Action,smart_tv,weekend_night,family,active
+USR0256,냉동창고문앞,1996,male,부산,ko,2020-09-18,Basic,Horror,headset,late_night,shared,active
+USR0257,로봇강아지꼬리,2000,female,경기,ko,2020-11-13,Basic,Animation,tablet,weekend_morning,single,active
+USR0258,달력뒤약속,1978,male,서울,ko,2019-07-26,Premium,Drama,smart_tv,weekday_evening,family,active
+USR0259,저녁온실,1993,female,세종,ko,2020-07-10,Standard,Romance,mobile,late_night,couple,active
+USR0260,사장님휴가중,1987,male,충남,ko,2020-01-03,Standard,Comedy,smart_tv,weekend_afternoon,single,active
+USR0261,전파없는아파트,1982,female,서울,ko,2019-09-13,Premium,Science Fiction,smart_tv,weekday_night,family,active
+USR0262,그림자이름표,1998,male,광주,ko,2020-10-09,Basic,Fantasy,tablet,late_night,shared,active
+USR0263,무대뒤열두명,1970,female,서울,ko,2019-03-22,Premium,Documentary,web,weekend_morning,couple,active
+USR0264,경성전파사손님,1985,male,인천,ko,2019-12-06,Premium,Action,smart_tv,weekend_night,single,active
+USR0265,종이문닫힘,1994,female,경북,ko,2020-08-21,Standard,Horror,headset,late_night,single,active
+USR0266,눈사람봄소풍,2003,male,강원,ko,2020-12-18,Basic,Animation,tablet,weekend_morning,family,active
+USR0267,우체통온도,1981,female,전북,ko,2019-08-09,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0268,파도몇시,1990,male,전남,ko,2020-04-24,Standard,Romance,web,weekend_night,single,active
+USR0269,공유냉장고단속,1995,female,서울,ko,2020-09-04,Basic,Comedy,mobile,commute,shared,active
+USR0270,날씨를사는중,1988,male,경기,ko,2020-02-28,Premium,Science Fiction,smart_tv,late_night,family,active
+USR0271,나무의주소,1974,female,경남,ko,2019-05-31,Premium,Fantasy,smart_tv,weekend_afternoon,couple,active
+USR0272,휠체어귀가길,1986,male,서울,ko,2020-01-17,Standard,Documentary,web,weekday_night,single,active
+USR0273,산불선구조대,1991,female,강원,ko,2020-05-08,Standard,Action,smart_tv,weekend_night,family,active
+USR0274,현관밖어제,1997,male,서울,ko,2020-10-30,Basic,Horror,mobile,late_night,shared,active
+USR0275,바다유리노래,2001,female,제주,ko,2020-11-27,Basic,Animation,tablet,weekend_morning,single,active
+USR0276,정류장의자,1973,male,경남,ko,2019-04-12,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0277,낮잠끝전화,1996,female,서울,ko,2020-08-14,Basic,Romance,mobile,late_night,shared,active
+USR0278,동네방송제보자,1984,male,경북,ko,2019-11-22,Standard,Comedy,smart_tv,weekend_afternoon,family,active
+USR0279,화성행대기중,1989,female,대전,ko,2020-03-06,Premium,Science Fiction,game_console,weekend_night,single,active
+USR0280,오늘마법품절,1993,male,서울,ko,2020-06-19,Standard,Fantasy,tablet,late_night,single,active
+USR0281,고향번역중,1977,female,경기,ko,2019-07-05,Premium,Documentary,web,weekday_evening,couple,active
+USR0282,무궁화호승객,1985,male,충북,ko,2019-12-20,Standard,Action,smart_tv,weekend_night,family,active
+USR0283,숨쉬는벽지,1998,female,인천,ko,2020-10-02,Basic,Horror,headset,late_night,shared,active
+USR0284,투명공룡친구,2004,male,서울,ko,2020-12-25,Basic,Animation,tablet,weekend_morning,family,active
+USR0285,보증금없는방,1982,female,서울,ko,2019-09-27,Premium,Drama,smart_tv,weekday_night,single,active
+USR0286,우리사이거리,1991,male,경기,ko,2020-04-10,Standard,Romance,web,late_night,couple,active
+USR0287,고시원셰프팬,1995,female,서울,ko,2020-08-28,Basic,Comedy,mobile,commute,shared,active
+USR0288,별빛우체국,1979,male,대전,ko,2019-08-16,Premium,Science Fiction,smart_tv,weekend_night,family,active
+USR0289,달을빌린사람,1997,female,서울,ko,2020-09-25,Basic,Fantasy,tablet,late_night,single,active
+USR0290,연어지도따라,1988,male,강원,ko,2020-02-21,Standard,Documentary,web,weekend_afternoon,couple,active
+USR0291,항공로승객,1983,female,인천,ko,2019-11-15,Premium,Action,smart_tv,weekend_night,family,active
+USR0292,체크아웃대기,1994,male,경기,ko,2020-07-31,Standard,Horror,headset,late_night,single,active
+USR0293,우체부구름이,2002,female,부산,ko,2020-12-11,Basic,Animation,tablet,weekend_morning,shared,active
+USR0294,겨울귤한상자,1971,male,제주,ko,2019-03-29,Premium,Drama,smart_tv,weekday_evening,couple,active
+USR0295,플레이리스트밤,1990,female,서울,ko,2020-03-13,Standard,Romance,mobile,late_night,single,active
+USR0296,로봇파업지지,1986,male,세종,ko,2020-01-24,Premium,Comedy,smart_tv,weekend_night,family,active
+USR0297,서울두번째달,1998,female,서울,ko,2020-10-16,Basic,Science Fiction,tablet,late_night,shared,active
+USR0298,구름수선예약,1992,male,강원,ko,2020-05-22,Standard,Fantasy,web,weekend_afternoon,single,active
+USR0299,내일도문엽니다,1976,female,경남,ko,2019-06-28,Premium,Documentary,smart_tv,weekday_evening,couple,active
+USR0300,마지막방패연,1984,male,경기,ko,2019-12-13,Premium,Action,smart_tv,weekend_night,family,active
