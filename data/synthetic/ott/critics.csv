@@ -1,0 +1,41 @@
+critic_id,critic_name,publication_name,country_code,years_experience,specialty_genre,email,joined_date,is_top_critic
+CRT001,Fictional Critic 001,The Fictional Frame,GB,17,Animation,critic001@example.invalid,2015-12-31,true
+CRT002,Fictional Critic 002,Synthetic Screen Journal,CA,6,Romance,critic002@example.invalid,2004-09-07,true
+CRT003,Fictional Critic 003,Imaginary Cinema Weekly,BR,8,Comedy,critic003@example.invalid,2013-05-30,true
+CRT004,Fictional Critic 004,Mock Review Ledger,JP,14,Fantasy,critic004@example.invalid,2018-08-04,true
+CRT005,Fictional Critic 005,Sample Culture Desk,DE,9,Action,critic005@example.invalid,2018-06-23,true
+CRT006,Fictional Critic 006,Test Reel Quarterly,IN,7,Thriller,critic006@example.invalid,2011-07-08,true
+CRT007,Fictional Critic 007,Demo Arts Tribune,US,8,Horror,critic007@example.invalid,2016-01-28,true
+CRT008,Fictional Critic 008,Placeholder Pictures Review,FR,16,Documentary,critic008@example.invalid,2014-08-19,true
+CRT009,Fictional Critic 009,The Fictional Frame,AU,25,Science Fiction,critic009@example.invalid,2008-03-30,true
+CRT010,Fictional Critic 010,Synthetic Screen Journal,KR,23,Drama,critic010@example.invalid,2008-08-21,true
+CRT011,Fictional Critic 011,Imaginary Cinema Weekly,GB,2,Animation,critic011@example.invalid,2022-12-07,false
+CRT012,Fictional Critic 012,Mock Review Ledger,CA,1,Romance,critic012@example.invalid,2015-06-20,false
+CRT013,Fictional Critic 013,Sample Culture Desk,BR,2,Comedy,critic013@example.invalid,2012-02-17,false
+CRT014,Fictional Critic 014,Test Reel Quarterly,JP,6,Fantasy,critic014@example.invalid,2008-01-15,false
+CRT015,Fictional Critic 015,Demo Arts Tribune,DE,11,Action,critic015@example.invalid,2017-10-31,false
+CRT016,Fictional Critic 016,Placeholder Pictures Review,IN,23,Thriller,critic016@example.invalid,2007-06-02,false
+CRT017,Fictional Critic 017,The Fictional Frame,US,7,Horror,critic017@example.invalid,2016-07-28,false
+CRT018,Fictional Critic 018,Synthetic Screen Journal,FR,9,Documentary,critic018@example.invalid,2012-12-06,false
+CRT019,Fictional Critic 019,Imaginary Cinema Weekly,AU,2,Science Fiction,critic019@example.invalid,2006-08-28,false
+CRT020,Fictional Critic 020,Mock Review Ledger,KR,23,Drama,critic020@example.invalid,2012-11-08,false
+CRT021,Fictional Critic 021,Sample Culture Desk,GB,26,Animation,critic021@example.invalid,2018-07-02,false
+CRT022,Fictional Critic 022,Test Reel Quarterly,CA,5,Romance,critic022@example.invalid,2007-04-09,false
+CRT023,Fictional Critic 023,Demo Arts Tribune,BR,28,Comedy,critic023@example.invalid,2023-10-25,false
+CRT024,Fictional Critic 024,Placeholder Pictures Review,JP,7,Fantasy,critic024@example.invalid,2013-04-08,false
+CRT025,Fictional Critic 025,The Fictional Frame,DE,2,Action,critic025@example.invalid,2008-06-19,false
+CRT026,Fictional Critic 026,Synthetic Screen Journal,IN,24,Thriller,critic026@example.invalid,2014-11-07,false
+CRT027,Fictional Critic 027,Imaginary Cinema Weekly,US,20,Horror,critic027@example.invalid,2006-05-03,false
+CRT028,Fictional Critic 028,Mock Review Ledger,FR,9,Documentary,critic028@example.invalid,2007-06-24,false
+CRT029,Fictional Critic 029,Sample Culture Desk,AU,13,Science Fiction,critic029@example.invalid,2008-12-16,false
+CRT030,Fictional Critic 030,Test Reel Quarterly,KR,26,Drama,critic030@example.invalid,2008-05-11,false
+CRT031,Fictional Critic 031,Demo Arts Tribune,GB,28,Animation,critic031@example.invalid,2011-01-23,false
+CRT032,Fictional Critic 032,Placeholder Pictures Review,CA,1,Romance,critic032@example.invalid,2008-03-26,false
+CRT033,Fictional Critic 033,The Fictional Frame,BR,9,Comedy,critic033@example.invalid,2018-06-05,false
+CRT034,Fictional Critic 034,Synthetic Screen Journal,JP,13,Fantasy,critic034@example.invalid,2005-07-10,false
+CRT035,Fictional Critic 035,Imaginary Cinema Weekly,DE,19,Action,critic035@example.invalid,2010-04-09,false
+CRT036,Fictional Critic 036,Mock Review Ledger,IN,16,Thriller,critic036@example.invalid,2020-08-10,false
+CRT037,Fictional Critic 037,Sample Culture Desk,US,27,Horror,critic037@example.invalid,2022-08-26,false
+CRT038,Fictional Critic 038,Test Reel Quarterly,FR,11,Documentary,critic038@example.invalid,2006-05-26,false
+CRT039,Fictional Critic 039,Demo Arts Tribune,AU,21,Science Fiction,critic039@example.invalid,2015-06-15,false
+CRT040,Fictional Critic 040,Placeholder Pictures Review,KR,13,Drama,critic040@example.invalid,2017-06-24,false
